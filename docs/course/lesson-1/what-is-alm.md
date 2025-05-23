@@ -6,7 +6,7 @@ toc_min_heading_level: 2
 toc_max_heading_level: 2
 ---
 
-import Timeline from '@site/src/components/TimeLine';
+import AlmPayflowTimeline from '@site/src/components/alm/AlmPayflowTimeline';
 import CollapsibleCard from '@site/src/components/_library/CollapsibleCard/TWCollapsibleCard';
 
 ## 1. Introduktion
@@ -78,7 +78,7 @@ Här följer ett exempel på hur ALM kan tillämpas i praktiken, visualiserat so
 <!-- [Showcase](https://h9gng3.csb.app/) -->
 
 <CollapsibleCard title="ALM-Tidslinje för 'PayFlow'" preview>
-  <Timeline />
+  <AlmPayflowTimeline />
 </CollapsibleCard>
 
 | **Fas** | **Veckor** | **Aktiviteter** | **Leveranser** |
