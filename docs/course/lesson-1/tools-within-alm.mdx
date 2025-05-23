@@ -1,0 +1,185 @@
+---
+sidebar_position: 3
+title: Komponenter och Verktyg inom ALM
+description: Vilka komponenter och verktyg finns det inom ALM?
+toc_max_heading_level: 3
+---
+
+import CollapsibleCard from '@site/src/components/_library/CollapsibleCard/TWCollapsibleCard';
+import AlmTools from '@site/src/components/AlmTools';
+
+## 1. Komponenter i ALM
+
+[Alm-tools](https://h9gng3.csb.app/alm-tools.html)
+
+ALM kan delas upp i flera nyckelkomponenter:
+
+### Kravhantering
+
+- Definiera, spåra och hantera krav genom hela projektets livscykel.
+- Hjälper till att säkerställa att alla intressenter har en gemensam förståelse för projektets mål.
+
+**Exempel:**
+
+- Ett team utvecklar en mobilapp och använder Jira för att spåra användarnas krav på funktioner såsom inloggning via sociala medier.
+
+**Diskussionsfråga:**
+
+- Hur kan ett team säkerställa att krav inte missförstås mellan utvecklare och projektägare?
+
+### Versionshantering
+
+- Håller reda på olika versioner av koden.
+- Användning av Git, SVN eller andra versionshanteringssystem.
+
+**Exempel:**
+
+- Ett team som utvecklar en ny e-handelsplattform använder Git och GitHub för att hantera sin kodbas. Här är ett exempel på deras arbetsflöde:
+
+```bash
+# 1. Klona repositoryt om det inte redan är klonat
+$ git clone https://github.com/org/ecommerce-platform.git
+$ cd ecommerce-platform
+
+# 2. Skapa en ny branch för en ny funktion
+$ git checkout -b feature/add-payment-gateway
+
+# 3. Arbeta på koden och göra ändringar
+$ echo 'console.log("Adding payment gateway");' > payment.js
+$ git add payment.js
+$ git commit -m "Lägg till stöd för betalningsgateway"
+
+# 4. Skicka ändringar till GitHub
+$ git push origin feature/add-payment-gateway
+
+# 5. Skapa en Pull Request (via GitHub-gränssnittet eller CLI)
+$ gh pr create --base main --head feature/add-payment-gateway --title "Lägg till betalningsgateway" --body "Denna PR implementerar stöd för betalningar."
+
+# 6. Teammedlemmar granskar koden och godkänner ändringar
+
+# 7. När PR är godkänd, slå samman koden
+$ git checkout main
+$ git merge feature/add-payment-gateway
+$ git push origin main
+
+```
+
+Efter sammanslagningen körs automatiserade tester via GitHub Actions, och om alla tester passerar deployas koden till produktionsmiljön automatiskt via CI/CD-pipelinen.
+
+**Diskussionsfråga:**
+
+- Hur kan detta arbetsflöde skalas upp för att fungera effektivt i ett större team där flera utvecklare arbetar parallellt på olika funktioner?
+
+### Utveckling och testning
+
+- Integration av CI/CD (Continuous Integration/Continuous Deployment).
+- Användning av automatiserade tester för att säkerställa kodkvalitet.
+
+**Exempel:**
+
+- Ett företag implementerar GitHub Actions tillsammans med Jest för att automatiskt köra tester och bygga applikationen vid varje commit. Nedan följer en konfiguration för att automatisera tester i ett Node.js-projekt:
+
+**1. Lägg till Jest för testning**
+
+```bash
+# Installera Jest
+$ npm install --save-dev jest
+
+# Uppdatera package.json för att definiera testskriptet
+{
+  "scripts": {
+    "test": "jest"
+  }
+}
+```
+
+**2. Skapa en enkel testfil (sum.test.js)**
+
+```jsx
+const sum = (a, b) => a + b;
+
+test('Adderar 1 + 2 och får 3', () => {
+  expect(sum(1, 2)).toBe(3);
+});
+```
+
+**3. Konfigurera GitHub Actions för CI/CD**
+Skapa en `.github/workflows/test.yml` fil i projektets root-mapp:
+
+```yaml
+name: Run Jest Tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+```
+
+När en utvecklare pushar kod eller skapar en pull request, kör GitHub Actions automatiskt testerna. Om testerna misslyckas, blockeras sammanslagningen till huvudgrenen tills felen är åtgärdade.
+
+**Diskussionsfråga:**
+
+- Vilka fördelar har CI/CD med GitHub Actions jämfört med traditionella testmetoder?
+
+**Diskussionsfråga:**
+
+- Vilka fördelar och utmaningar finns det med att automatisera testning?
+
+### Distribution och driftsättning
+
+- Strategier för hur kod flyttas från utveckling till produktion.
+- DevOps och Infrastructure as Code (IaC).
+
+**Exempel:**
+
+- En organisation använder Kubernetes och Docker för att hantera distributionen av sina mikrotjänster i en molnbaserad miljö.
+
+**Diskussionsfråga:**
+
+- Hur kan ett företag minimera driftstörningar vid driftsättning av nya versioner?
+
+### Underhåll och vidareutveckling
+
+- Kontinuerliga uppdateringar och bugfixar.
+- Hantering av teknisk skuld och optimering.
+
+**Exempel:**
+
+- Ett mjukvaruföretag har en process för att regelbundet refaktorisera kod och minska teknisk skuld, vilket förhindrar att systemet blir svårhanterligt över tid.
+
+**Diskussionsfråga:**
+
+- Hur kan man balansera mellan att utveckla nya funktioner och hantera teknisk skuld?
+
+---
+
+## 2. Verktyg och metoder inom ALM
+
+<CollapsibleCard title="Verktyg och metoder inom ALM" preview>
+<AlmTools />
+</CollapsibleCard>
+
+Några vanliga verktyg som används inom ALM:
+
+- **Kravhantering**: Jira, Azure DevOps, Trello
+- **Versionshantering**: Git, GitHub, GitLab, Bitbucket
+- **Testning**: Selenium, Jest, Cypress
+- **CI/CD**: Jenkins, GitHub Actions, GitLab CI/CD
+- **Driftsättning**: Docker, Kubernetes, Terraform
+
+![image (3).jpg](attachment:453fb54b-a21b-47e6-ad6e-9e689a7e7666:image_(3).jpg)
