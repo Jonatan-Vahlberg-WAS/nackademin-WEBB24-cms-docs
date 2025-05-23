@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { cn } from '@/utils/cn';
+import { cn } from "@/utils/cn";
 
-const ScrollOverlay = ({ 
-  containerRef, 
-  theme = 'light', 
+const ScrollOverlay = ({
+  containerRef,
+  theme = "light",
   size = "md",
   className,
-  ...props 
+  ...props
 }) => {
   const [showTopOverlay, setShowTopOverlay] = useState(false);
   const [showBottomOverlay, setShowBottomOverlay] = useState(false);
@@ -31,7 +31,7 @@ const ScrollOverlay = ({
       // Add resize observer to update on container size changes
       const resizeObserver = new ResizeObserver(checkScroll);
       resizeObserver.observe(container);
-      
+
       return () => {
         container.removeEventListener("scroll", checkScroll);
         resizeObserver.disconnect();
@@ -40,52 +40,48 @@ const ScrollOverlay = ({
   }, [containerRef]);
 
   const overlayContainerClasses = cn(
-    'tw:!absolute tw:!top-0 tw:!left-0 tw:!right-2 tw:!bottom-0 tw:!w-auto tw:!pointer-events-none tw:!z-[1]',
+    "absolute top-0 left-0 right-2 bottom-0 w-auto pointer-events-none z-[1]",
     className
   );
 
   const topOverlayClasses = cn(
-    'tw:!absolute tw:!top-0 tw:!left-0 tw:!right-0 tw:!transition-opacity tw:!duration-200 tw:!ease-in-out',
+    "absolute top-0 left-0 right-0 transition-opacity duration-200 ease-in-out",
     {
-      'tw:!bg-gradient-to-b tw:!from-gray-50 tw:!to-transparent': theme === 'gray',
-      'tw:!bg-gradient-to-b tw:!from-white tw:!to-transparent': theme === 'light',
-      'tw:!bg-gradient-to-b tw:!from-black tw:!to-transparent': theme === 'dark',
-      'tw:!opacity-100': showTopOverlay,
-      'tw:!opacity-0': !showTopOverlay,
-      'tw:!h-25': showTopOverlay && size === 'lg',
-      'tw:!h-12': showTopOverlay && size === 'md',
-      'tw:!h-8': showTopOverlay && size === 'sm'
+      "bg-gradient-to-b from-gray-50 to-transparent": theme === "gray",
+      "bg-gradient-to-b from-white to-transparent": theme === "light",
+      "bg-gradient-to-b from-black to-transparent": theme === "dark",
+      "opacity-100": showTopOverlay,
+      "opacity-0": !showTopOverlay,
+      "h-25": showTopOverlay && size === "lg",
+      "h-12": showTopOverlay && size === "md",
+      "h-8": showTopOverlay && size === "sm",
     }
   );
 
   const bottomOverlayClasses = cn(
-    'tw:!absolute tw:!bottom-0 tw:!left-0 tw:!right-0 tw:!transition-opacity tw:!duration-200 tw:!ease-in-out',
+    "absolute bottom-0 left-0 right-0 transition-opacity duration-200 ease-in-out",
     {
-      'tw:!bg-gradient-to-t tw:!from-gray-50 tw:!to-transparent': theme === 'gray',
-      'tw:!bg-gradient-to-t tw:!from-white tw:!to-transparent': theme === 'light',
-      'tw:!bg-gradient-to-t tw:!from-black tw:!to-transparent': theme === 'dark',
-      'tw:!opacity-100 tw:!h-12': showBottomOverlay,
-      'tw:!opacity-0': !showBottomOverlay,
-      'tw:!h-25': showBottomOverlay && size === 'lg',
-      'tw:!h-12': showBottomOverlay && size === 'md',
-      'tw:!h-8': showBottomOverlay && size === 'sm'
+      "bg-gradient-to-t from-gray-50 to-transparent": theme === "gray",
+      "bg-gradient-to-t from-white to-transparent": theme === "light",
+      "bg-gradient-to-t from-black to-transparent": theme === "dark",
+      "opacity-100 h-12": showBottomOverlay,
+      "opacity-0": !showBottomOverlay,
+      "h-25": showBottomOverlay && size === "lg",
+      "h-12": showBottomOverlay && size === "md",
+      "h-8": showBottomOverlay && size === "sm",
     }
   );
 
   return (
-    <div 
-      className={overlayContainerClasses} 
+    <div
+      className={overlayContainerClasses}
       style={{ height: containerHeight }}
       {...props}
     >
-      <div 
-        className={cn(topOverlayClasses)}
-      />
-      <div 
-        className={cn(bottomOverlayClasses)}
-      />
+      <div className={cn(topOverlayClasses)} />
+      <div className={cn(bottomOverlayClasses)} />
     </div>
   );
 };
 
-export default ScrollOverlay; 
+export default ScrollOverlay;

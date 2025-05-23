@@ -1,16 +1,32 @@
-import { cn } from '../../../../utils/cn';
-import ActionBar from './TWActionBar';
-import Button from '../../Button/TWButton';
-import i18next from 'i18next';
+import { cn } from "../../../../utils/cn";
+import ActionBar from "./TWActionBar";
+import Button from "../../Button/TWButton";
+import i18next from "i18next";
 
-export const LeftActionBarWrapper = ({ children, className = '', ...props }) => {
-  const leftWrapperClasses = cn('tw:!flex tw:!gap-2 tw:!flex-1', className);
-  return <div className={leftWrapperClasses} {...props}>{children}</div>;
+export const LeftActionBarWrapper = ({
+  children,
+  className = "",
+  ...props
+}) => {
+  const leftWrapperClasses = cn("flex gap-2 flex-1", className);
+  return (
+    <div className={leftWrapperClasses} {...props}>
+      {children}
+    </div>
+  );
 };
 
-export const RightActionBarWrapper = ({ children, className = '', ...props }) => {
-  const rightWrapperClasses = cn('tw:!flex tw:!gap-2', className);
-  return <div className={rightWrapperClasses} {...props}>{children}</div>;
+export const RightActionBarWrapper = ({
+  children,
+  className = "",
+  ...props
+}) => {
+  const rightWrapperClasses = cn("flex gap-2", className);
+  return (
+    <div className={rightWrapperClasses} {...props}>
+      {children}
+    </div>
+  );
 };
 
 const StandardActionBar = ({
@@ -24,7 +40,7 @@ const StandardActionBar = ({
   cancelDisabled = false,
   cancelProps = {},
   onCancel = () => {},
-  
+
   renderSaveButton = true,
   saveLabel = i18next.t("general.actions.save"),
   saveButtonType = "submit",
@@ -44,7 +60,7 @@ const StandardActionBar = ({
       {renderDeleteButton && (
         <LeftActionBarWrapper>
           <Button
-            variant='danger'
+            variant="danger"
             disabled={disabled || deleteDisabled}
             type="button"
             onClick={onDelete}
@@ -67,7 +83,7 @@ const StandardActionBar = ({
         )}
         {renderSaveButton && (
           <Button
-            variant='success'
+            variant="success"
             type={saveButtonType}
             disabled={disabled}
             loading={loading}

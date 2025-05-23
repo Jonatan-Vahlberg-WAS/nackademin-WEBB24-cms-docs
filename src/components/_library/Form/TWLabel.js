@@ -1,7 +1,6 @@
+import { FaLock } from "react-icons/fa";
 
-import { FaLock } from 'react-icons/fa';
-
-import { cn } from '@/utils/cn'
+import { cn } from "@/utils/cn";
 
 const Label = ({
   children,
@@ -15,26 +14,28 @@ const Label = ({
   ...props
 }) => {
   const labelClasses = cn(
-    'tw:!text-sm tw:!font-bold tw:!mb-2',
+    "text-sm font-bold mb-2",
     {
-      'tw:!text-gray-500': !error || !touched,
-      'tw:!text-red-700': error && touched,
-      'tw:!text-gray-400': disabled,
-      'tw:after:!content-["*"] tw:after:!text-red-500 tw:after:!-translate-y-1 tw:after:!tw-leading-none':
+      "text-gray-500": !error || !touched,
+      "text-red-700": error && touched,
+      "text-gray-400": disabled,
+      'after:!content-["*"] after:!text-red-500 after:!-translate-y-1 after:!tw-leading-none':
         required,
-      'tw:!mb-0': spacing === "none",
-      'tw:!mb-1': spacing === "tight",
-      'tw:!mb-2': spacing === "normal",
-      'tw:!mb-3': spacing === "loose",
+      "mb-0": spacing === "none",
+      "mb-1": spacing === "tight",
+      "mb-2": spacing === "normal",
+      "mb-3": spacing === "loose",
     },
     className
-  )
+  );
   return (
     <label className={labelClasses} {...props}>
       {children}
-      {showLock && <FaLock className='tw:!ml-1' size={10} style={{ marginBottom: '4px' }} />}
+      {showLock && (
+        <FaLock className="ml-1" size={10} style={{ marginBottom: "4px" }} />
+      )}
     </label>
-  )
-}
+  );
+};
 
 export default Label;

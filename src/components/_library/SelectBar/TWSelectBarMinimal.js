@@ -1,7 +1,5 @@
-import SelectItemMinimal from "./TWSelectItemMinimal"
-import { cn } from "../../../utils/cn"
-
-
+import SelectItemMinimal from "./TWSelectItemMinimal";
+import { cn } from "../../../utils/cn";
 
 const SelectBarMinimal = ({
   items = [],
@@ -9,19 +7,15 @@ const SelectBarMinimal = ({
   className = "",
   children,
   disabled = false,
-  selectItem = () => { },
+  selectItem = () => {},
   ...props
 }) => {
-
-  const wrapperClasses = cn(
-    'tw:!p-0 tw:!w-full tw:!flex tw:!overflow-x-auto tw:!gap-2',
-    className,
-  )
+  const wrapperClasses = cn("p-0 w-full flex overflow-x-auto gap-2", className);
 
   return (
     <div className={wrapperClasses} {...props}>
       {items.map((item) => {
-        const isSelected = selectedItem?.value === item?.value
+        const isSelected = selectedItem?.value === item?.value;
         return (
           <SelectItemMinimal
             key={item.value}
@@ -30,11 +24,11 @@ const SelectBarMinimal = ({
             selectItem={selectItem}
             disabled={disabled}
           />
-        )
+        );
       })}
       {children}
     </div>
-  )
-}
+  );
+};
 
-export default SelectBarMinimal
+export default SelectBarMinimal;

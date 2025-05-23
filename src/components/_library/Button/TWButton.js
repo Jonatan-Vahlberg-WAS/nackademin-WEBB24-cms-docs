@@ -1,39 +1,44 @@
-import { cn } from '../../../utils/cn'
+import { cn } from "../../../utils/cn";
 
-const ButtonSpinner = ({ noPadding }) => <i className='fa fa-spinner fa-spin' style={{ padding: noPadding ? 0 : '0 16px' }} />
+const ButtonSpinner = ({ noPadding }) => (
+  <i
+    className="fa fa-spinner fa-spin"
+    style={{ padding: noPadding ? 0 : "0 16px" }}
+  />
+);
 
-const Button = ({ 
-  variant = 'default', 
-  outline = false, 
-  size, 
-  loading = false, 
+const Button = ({
+  variant = "default",
+  outline = false,
+  size,
+  loading = false,
   noPadding,
   aspect,
-  className = '', 
-  children, 
-  ...props 
+  className = "",
+  children,
+  ...props
 }) => {
   const buttonClasses = cn(
-    'tw-button tw:!h-10',
+    "tw-button h-10",
     {
-      'tw-button-warning': variant === 'warning',
-      'tw-button-danger': variant === 'danger',
-      'tw-button-success': variant === 'success',
-      'tw-button-info': variant === 'info',
-      'tw-button': variant === 'success',
-      'tw-button-sm tw:!h-8': size === 'sm',
-      'tw-button-xs tw:!h-6': size === 'xs',
-      'tw-button-outline': outline,
-      'tw:!aspect-square': aspect === 'square',
+      "tw-button-warning": variant === "warning",
+      "tw-button-danger": variant === "danger",
+      "tw-button-success": variant === "success",
+      "tw-button-info": variant === "info",
+      "tw-button": variant === "success",
+      "tw-button-sm h-8": size === "sm",
+      "tw-button-xs h-6": size === "xs",
+      "tw-button-outline": outline,
+      "aspect-square": aspect === "square",
     },
-    className,
-  )
+    className
+  );
 
   return (
     <button className={buttonClasses} {...props}>
       {loading ? <ButtonSpinner noPadding={noPadding} /> : children}
     </button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;

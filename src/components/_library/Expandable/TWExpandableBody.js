@@ -1,4 +1,4 @@
-import { cn } from "../../../utils/cn"
+import { cn } from "../../../utils/cn";
 
 const ExpandableBody = ({
   isExpanded = false,
@@ -6,21 +6,20 @@ const ExpandableBody = ({
   className,
   ...props
 }) => {
-
   const bodyClasses = cn(
-    'tw:!overflow-hidden tw:!transition-all tw:!duration-300',
+    "overflow-hidden transition-all duration-300",
     {
-      'tw:!p-4 tw:!opacity-100 tw:!h-auto': isExpanded,
-      'tw:!p-0 tw:!opacity-0 tw:!h-0': !isExpanded,
+      "p-4 opacity-100 h-auto": isExpanded,
+      "p-0 opacity-0 h-0": !isExpanded,
     },
     className || ""
-  )
+  );
 
   return (
     <div className={bodyClasses} {...props}>
       {children}
     </div>
-  )
-}
+  );
+};
 
-export default ExpandableBody
+export default ExpandableBody;

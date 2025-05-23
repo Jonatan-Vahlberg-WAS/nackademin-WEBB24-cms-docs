@@ -1,18 +1,18 @@
-import { cn } from '../../../utils/cn'
+import { cn } from "../../../utils/cn";
 
-const MainContainer = ({ children, className = '', ...props }) => {
+const MainContainer = ({ children, className = "", ...props }) => {
   return (
     <div
       className={cn(
-        'tw:!w-full tw:!h-full tw:!flex-1 tw:!relative tw:!ml-auto tw:!mr-auto',
-        'tw:lg:!max-w-page tw:lg:!py-12 tw:lg:!px-8 tw:lg:flex-1 tw:lg:w-[calc(100%-4rem)]',
+        "w-full h-full flex-1 relative ml-auto mr-auto",
+        "lg:!max-w-page lg:!py-12 lg:!px-8 lg:flex-1 lg:w-[calc(100%-4rem)]",
         className
       )}
       {...props}
     >
       {children}
     </div>
-  )
-}
+  );
+};
 
-export default MainContainer
+export default MainContainer;

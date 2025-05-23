@@ -1,14 +1,14 @@
-import { useState } from 'react'
+import { useState } from "react";
 
-import FileActions from './TWFileActions'
-import FileIcon from './TWFileIcon'
-import FileLoadingBar from './TWFileLoadingBar'
-import FileName from './TWFileName'
-import FileError from './TWFileError'
-import FileWrapper from './TWFileWrapper'
-import FileRenamerForm from './TWFileRenamer'
-import { getFileParts } from '@/utils/helpers'
-import { cn } from '@/utils/cn'
+import FileActions from "./TWFileActions";
+import FileIcon from "./TWFileIcon";
+import FileLoadingBar from "./TWFileLoadingBar";
+import FileName from "./TWFileName";
+import FileError from "./TWFileError";
+import FileWrapper from "./TWFileWrapper";
+import FileRenamerForm from "./TWFileRenamer";
+import { getFileParts } from "@/utils/helpers";
+import { cn } from "@/utils/cn";
 
 export const fileProps = {
   file: undefined,
@@ -18,22 +18,22 @@ export const fileProps = {
   isDeletable: true,
   isEditable: true,
   error: false,
-  iconSize: 'md',
+  iconSize: "md",
   nameProps: {},
   withIcon: true,
   asLink: false,
   disabled: false,
   percent: 0,
-  bg: '',
-  className: '',
+  bg: "",
+  className: "",
   onClick: () => {},
   onDelete: () => {},
   onEdit: (fileName, extension, onSuccess = () => {}) => {},
-  onExchange: () => {}
-}
+  onExchange: () => {},
+};
 
 const File = (_props = fileProps) => {
-  const [isHovered, setIsHovered] = useState(false)
+  const [isHovered, setIsHovered] = useState(false);
   const {
     file,
     isUploaded,
@@ -53,46 +53,42 @@ const File = (_props = fileProps) => {
     ...props
   } = {
     ...fileProps,
-    ..._props
-  }
+    ..._props,
+  };
 
-  if (!file) return null
-  
-  const [isEditing, setIsEditing] = useState(false)
-  const toggleEdit = () => setIsEditing(!isEditing)
-  
-  const [base, extension] = getFileParts(file?.name)
-  const [fileName, setFileName] = useState(base)
-  
-  const cardHover = bg && isUploaded && !error
-  
-  const onClick = error || !isUploaded ? undefined : props.onClick
-  const onDelete = props.onDelete
-  
+  if (!file) return null;
+
+  const [isEditing, setIsEditing] = useState(false);
+  const toggleEdit = () => setIsEditing(!isEditing);
+
+  const [base, extension] = getFileParts(file?.name);
+  const [fileName, setFileName] = useState(base);
+
+  const cardHover = bg && isUploaded && !error;
+
+  const onClick = error || !isUploaded ? undefined : props.onClick;
+  const onDelete = props.onDelete;
+
   const onExchange = () => {
-    if(error || !isUploaded || isEditing || !props.onExchange) return
+    if (error || !isUploaded || isEditing || !props.onExchange) return;
     //TODO: Implement this
-  }
+  };
   const onEdit = () => {
-    if(error || !isUploaded || !isEditing || !props.onEdit) return
-    props.onEdit(fileName, extension, toggleEdit)
-  }
+    if (error || !isUploaded || !isEditing || !props.onEdit) return;
+    props.onEdit(fileName, extension, toggleEdit);
+  };
   const _onClick = (e) => {
-    e.stopPropagation()
-    onClick()
-  }
+    e.stopPropagation();
+    onClick();
+  };
 
   const fileContentClasses = cn(
-    'tw:!flex tw:!flex-col tw:!justify-center tw:!ml-2 tw:!w-full tw:!mr-2',
-  )
+    "flex flex-col justify-center ml-2 w-full mr-2"
+  );
 
-  const fileTopRowClasses = cn(
-    'tw:!flex tw:!items-center tw:!justify-between tw:!w-full',
-  )
+  const fileTopRowClasses = cn("flex items-center justify-between w-full");
 
-  const fileBottomRowClasses = cn(
-    'tw:!flex tw:!items-center tw:!w-full',
-  )
+  const fileBottomRowClasses = cn("flex items-center w-full");
 
   return (
     <FileWrapper
@@ -135,16 +131,18 @@ const File = (_props = fileProps) => {
               {...nameProps}
             />
           )}
-          {isEditing && <FileRenamerForm
-            isEditing={isEditing}
-            fileName={fileName}
-            extension={extension}
-            setFileName={setFileName}
-          />}
+          {isEditing && (
+            <FileRenamerForm
+              isEditing={isEditing}
+              fileName={fileName}
+              extension={extension}
+              setFileName={setFileName}
+            />
+          )}
         </div>
         {!isUploaded && !error && (
           <div className={fileBottomRowClasses}>
-            <FileLoadingBar percent={percent} className='tw:!w-full tw:!mt-1' />
+            <FileLoadingBar percent={percent} className="w-full mt-1" />
           </div>
         )}
         {error && (
@@ -169,7 +167,7 @@ const File = (_props = fileProps) => {
         />
       )}
     </FileWrapper>
-  )
-}
+  );
+};
 
-export default File
+export default File;

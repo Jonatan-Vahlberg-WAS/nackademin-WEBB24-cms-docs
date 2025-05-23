@@ -1,45 +1,43 @@
-import { useRef, useState } from 'react'
-import Button from './TWButton'
-import { cn } from '@/utils/cn'
+import { useRef, useState } from "react";
+import Button from "./TWButton";
+import { cn } from "@/utils/cn";
 
 const ButtonDropdown = ({
-  variant = 'info',
-  align = 'left',
+  variant = "info",
+  align = "left",
   Toggle = "",
   toggleProps,
   children,
   menuClassName,
   menuProps,
- }) => {
-  const [isOpen, setIsOpen] = useState(false)
-  const wrapperRef = useRef(null)
+}) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const wrapperRef = useRef(null);
   const dropdownMenuClasses = cn(
-    'tw:!absolute tw:!top-full tw:!left-0 tw:!w-full tw:!z-10',
-    'tw:!bg-white tw:!shadow-xl tw:!rounded-lg tw:!p-2 tw:!min-w-[200px] tw:!bottom-2',
+    "absolute top-full left-0 w-full z-10",
+    "bg-white shadow-xl rounded-lg p-2 min-w-[200px] bottom-2",
     {
-      'tw:!right-full tw:!translate-x-full': align === 'left',
-      'tw:!left-full tw:!-translate-x-full': align === 'right',
-      'tw:!hidden': !isOpen,
-      'tw:!w-fit tw:!h-fit tw:!gap-2 tw:!flex tw:!flex-col tw:!p-2': isOpen
+      "right-full translate-x-full": align === "left",
+      "left-full -translate-x-full": align === "right",
+      hidden: !isOpen,
+      "w-fit h-fit gap-2 flex flex-col p-2": isOpen,
     },
     menuClassName
-  )
+  );
 
   return (
     <div ref={wrapperRef}>
-    <Button
-      variant={variant}
-      onClick={() => setIsOpen(!isOpen)}
-      className='tw:!relative'
-      {...toggleProps}
-      > 
+      <Button
+        variant={variant}
+        onClick={() => setIsOpen(!isOpen)}
+        className="relative"
+        {...toggleProps}
+      >
         {Toggle}
-        <div className={dropdownMenuClasses} >
-          {children}
-        </div>
-    </Button>
+        <div className={dropdownMenuClasses}>{children}</div>
+      </Button>
     </div>
-  )
-}
+  );
+};
 
-export default ButtonDropdown
+export default ButtonDropdown;

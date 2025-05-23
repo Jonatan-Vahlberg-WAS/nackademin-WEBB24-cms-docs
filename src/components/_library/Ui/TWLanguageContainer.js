@@ -1,5 +1,4 @@
-import { cn } from "@/utils/cn"
-
+import { cn } from "@/utils/cn";
 
 const LanguageContainer = ({
   children,
@@ -8,17 +7,13 @@ const LanguageContainer = ({
   className,
   softHidden = false,
 }) => {
-  const languageContainerClasses = cn(
-    {
-      "tw:!h-0 tw:!opacity-0 tw:!invisible tw:!hidden": !isSelected,
-      "tw:!block": !isSelected && softHidden,
-      [`tw:!mt-${index * -23}px`]: !!index,
-      className,
-    }
-  )
-  return (
-    <div className={languageContainerClasses}>{children}</div>
-  )
-}
+  const languageContainerClasses = cn({
+    "h-0 opacity-0 invisible hidden": !isSelected,
+    block: !isSelected && softHidden,
+    [`mt-${index * -23}px`]: !!index,
+    className,
+  });
+  return <div className={languageContainerClasses}>{children}</div>;
+};
 
-export default LanguageContainer
+export default LanguageContainer;

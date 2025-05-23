@@ -1,20 +1,20 @@
-import _ from 'lodash'
+import _ from "lodash";
 
-import Card from '../Card/TWCard'
-import PaginationBar from './Pagination/TWPagninationBar'
-import Divider from '../Ui/TWDivider'
-import { cn } from '../../../utils/cn'
-import { useEffect, useRef } from 'react'
+import Card from "../Card/TWCard";
+import PaginationBar from "./Pagination/TWPagninationBar";
+import Divider from "../Ui/TWDivider";
+import { cn } from "../../../utils/cn";
+import { useEffect, useRef } from "react";
 
 const List = ({
   loading = false,
-  items = [], 
-  withCard = true, 
-  withPagination = true, 
+  items = [],
+  withCard = true,
+  withPagination = true,
   className = "",
   listItemWrapperClassName = "",
-  gap=4,
-  rowHeight= 24,
+  gap = 4,
+  rowHeight = 24,
   headerHeight,
   footerHeight,
   rows = 10,
@@ -24,79 +24,92 @@ const List = ({
     totalPages: 0,
     next: null,
     previous: null,
-    onPagination: () => null
+    onPagination: () => null,
   },
-  renderHeader=null,
+  renderHeader = null,
   //eslint-disable-next-line no-unused-vars
-  renderItem =(item, index) => null,
+  renderItem = (item, index) => null,
   //eslint-disable-next-line no-unused-vars
-  renderLoadingItem =({index, rowHeight}) => null,
+  renderLoadingItem = ({ index, rowHeight }) => null,
   renderHeaderItem = null,
   renderFooterItem = null,
   renderEmptyState = null,
-  ...props }) => {
+  ...props
+}) => {
+  const loadingStarted = useRef(false);
 
-    const loadingStarted = useRef(false)
+  useEffect(() => {
+    loadingStarted.current = loading;
+    if (!loadingStarted.current) {
+      setTimeout(() => {
+        loadingStarted.current = true;
+      }, 500);
+    }
+  }, []);
 
-    useEffect(() => {
-      loadingStarted.current = loading
-      if(!loadingStarted.current) {
-        setTimeout(() => {
-          loadingStarted.current = true
-        }, 500)
-      }
-    }, [])
+  pagination.next = !loading && pagination.next;
+  pagination.previous = !loading && pagination.previous;
+  let minHeight = rows * rowHeight;
 
-  pagination.next = !loading && pagination.next
-  pagination.previous = !loading && pagination.previous
-  let minHeight = rows * rowHeight
-
-  if(renderHeaderItem) {
-    headerHeight = headerHeight || rowHeight
-    minHeight += headerHeight
+  if (renderHeaderItem) {
+    headerHeight = headerHeight || rowHeight;
+    minHeight += headerHeight;
   }
 
-  if(renderFooterItem) {  
-    footerHeight = footerHeight || rowHeight
-    minHeight += footerHeight
+  if (renderFooterItem) {
+    footerHeight = footerHeight || rowHeight;
+    minHeight += footerHeight;
   }
 
-  if(gap) {
-    const gapRows = items.length - 1
-    rows = renderHeaderItem ? gapRows + 1 : gapRows
-    rows = renderFooterItem ? gapRows + 1 : gapRows
-    minHeight += gap * gapRows
+  if (gap) {
+    const gapRows = items.length - 1;
+    rows = renderHeaderItem ? gapRows + 1 : gapRows;
+    rows = renderFooterItem ? gapRows + 1 : gapRows;
+    minHeight += gap * gapRows;
   }
-  
-  const Wrapper = withCard ? Card : (props) => <div {...props}>{props.children}</div>
+
+  const Wrapper = withCard
+    ? Card
+    : (props) => <div {...props}>{props.children}</div>;
 
   const listItemsClasses = cn(
-    'tw:!relative tw:!py-6 tw:!px-4 tw:!box-content tw:!relative',
+    "relative py-6 px-4 box-content relative",
     {
-      'tw:!flex tw:!flex-col': gap,
+      "flex flex-col": gap,
     },
     listItemWrapperClassName
-  )
+  );
 
   return (
-    <Wrapper className="tw:!p-0">
+    <Wrapper className="p-0">
       {renderHeader && renderHeader()}
-      {renderHeader && <Divider/>}
+      {renderHeader && <Divider />}
       <div className={listItemsClasses} style={{ gap, minHeight }}>
-        {!loading && loadingStarted.current && renderEmptyState && typeof renderEmptyState === 'function' && items.length === 0 && renderEmptyState()}
+        {!loading &&
+          loadingStarted.current &&
+          renderEmptyState &&
+          typeof renderEmptyState === "function" &&
+          items.length === 0 &&
+          renderEmptyState()}
         {renderHeaderItem && renderHeaderItem()}
         {!loading && items.map((item, index) => renderItem(item, index))}
-        {items.length < pageSize && !loading && _.times(pageSize - items.length, (index) => <div key={index} style={{ height: rowHeight }}></div>)}
-        {loading && _.times(pageSize, (index) => renderLoadingItem({index, rowHeight}))}
+        {items.length < pageSize &&
+          !loading &&
+          _.times(pageSize - items.length, (index) => (
+            <div key={index} style={{ height: rowHeight }}></div>
+          ))}
+        {loading &&
+          _.times(pageSize, (index) => renderLoadingItem({ index, rowHeight }))}
         {renderFooterItem && renderFooterItem()}
       </div>
       {withPagination && <Divider />}
-      {withPagination && <div className="tw:!px-4 tw:!py-2">
-        <PaginationBar {...pagination} />
-      </div>}
+      {withPagination && (
+        <div className="px-4 py-2">
+          <PaginationBar {...pagination} />
+        </div>
+      )}
     </Wrapper>
-  )
-}
+  );
+};
 
-
-export default List
+export default List;

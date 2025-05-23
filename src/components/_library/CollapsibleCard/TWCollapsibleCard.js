@@ -8,8 +8,8 @@ const CollapsibleCard = ({ title, children, preview = true }) => {
   const [isOpen, setIsOpen] = useState(!preview);
 
   const headerClasses = cn(
-    "tw:w-full tw:flex tw:justify-between tw:border-none tw:items-center tw:px-4 tw:py-3 tw:bg-blue-500 tw:text-white",
-    "tw:hover:bg-blue-600 tw:transition"
+    "w-[calc(100%+3rem)] mx-[-1.5rem] mt-[-1.5rem] flex justify-between border-none items-center px-4 py-3 bg-blue-500 text-white rounded-t-md",
+    "hover:bg-blue-600 transition"
   );
 
   const contentClasses = cn(
@@ -22,11 +22,8 @@ const CollapsibleCard = ({ title, children, preview = true }) => {
   );
 
   return (
-    <Card className="tw-w-full tw-rounded-xl tw-bg-white tw-shadow-md tw-overflow-hidden tw-mb-8">
-      <button
-        className={headerClasses}
-        onClick={() => setIsOpen(!isOpen)}
-      >
+    <Card className="overflow-hidden relative">
+      <button className={headerClasses} onClick={() => setIsOpen(!isOpen)}>
         <h3 className="text-lg font-medium mb-0">{title}s</h3>
         {isOpen ? (
           <FaChevronUp className="text-white" />
@@ -35,13 +32,7 @@ const CollapsibleCard = ({ title, children, preview = true }) => {
         )}
       </button>
       <div
-        className={`transition-all duration-300 ${
-          isOpen
-            ? "opacity-100"
-            : preview
-            ? "max-h-[150px] opacity-100"
-            : "max-h-0 opacity-0"
-        } relative overflow-hidden`}
+        className={contentClasses}
       >
         <div className="p-4">{children}</div>
 

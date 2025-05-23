@@ -1,74 +1,79 @@
-import NextLink from 'next/link'
-import { cn } from '../../../utils/cn'
-import Button from '../Button/TWButton'
+import NextLink from "next/link";
+import { cn } from "../../../utils/cn";
+import Button from "../Button/TWButton";
 
 const linkProps = {
-  href: '',
-  as: '',
-  children: '',
-  variant: 'default',
+  href: "",
+  as: "",
+  children: "",
+  variant: "default",
   external: false,
-  size: 'md',
-  className: '',
-}
+  size: "md",
+  className: "",
+};
 export const ButtonLink = (_props = linkProps) => {
   const { href, as, children, external, ...props } = {
     ...linkProps,
-    ..._props
-  }
+    ..._props,
+  };
   return (
-    <NextLink href={href} as={as} target={external ? '_blank' : ''}>
+    <NextLink href={href} as={as} target={external ? "_blank" : ""}>
       <Button role="link" {...props}>
         {children}
       </Button>
     </NextLink>
-  )
-}
+  );
+};
 
 export const InlineLink = (_props = linkProps) => {
   const { children, external, className, variant, size, ...props } = {
     ...linkProps,
-    ..._props
-  }
+    ..._props,
+  };
   const linkClasses = cn(
-    "tw:!cursor-pointer tw:!transition tw:!duration-300 tw:!ease-in-out tw:!font-medium",
+    "cursor-pointer transition duration-300 ease-in-out font-medium",
     {
-      'tw:!underline': external,
-      'tw:!text-red-500 tw:hover:!text-red-700': variant === 'danger',
-      'tw:!text-blue-400 tw:hover:!text-blue-700': variant === 'info',
-      'tw:!text-yellow-500 tw:hover:!text-yellow-700': variant === 'warning',
-      'tw:!text-green-600 tw:hover:!text-green-800': variant === 'success' || variant === 'default',
-      'tw:!text-inherit tw:!no-underline': variant === 'unstyled',
-      'tw:!text-sm': size === 'sm',
-      'tw:!text-md': size === 'md',
-      'tw:!text-lg': size === 'lg',
+      underline: external,
+      "text-red-500 hover:!text-red-700": variant === "danger",
+      "text-blue-400 hover:!text-blue-700": variant === "info",
+      "text-yellow-500 hover:!text-yellow-700": variant === "warning",
+      "text-green-600 hover:!text-green-800":
+        variant === "success" || variant === "default",
+      "text-inherit no-underline": variant === "unstyled",
+      "text-sm": size === "sm",
+      "text-md": size === "md",
+      "text-lg": size === "lg",
     },
     className
-  )
+  );
   return (
-    <NextLink className={linkClasses} target={external ? '_blank' : ''} {...props}>
+    <NextLink
+      className={linkClasses}
+      target={external ? "_blank" : ""}
+      {...props}
+    >
       {children}
     </NextLink>
-  )
-}
+  );
+};
 
-const Link = (_props = {...linkProps, type: 'link'}) => {
-  const {children, type, className, ...props } = {
+const Link = (_props = { ...linkProps, type: "link" }) => {
+  const { children, type, className, ...props } = {
     ...linkProps,
-    ..._props
-  }
-  if (type === 'button') {
+    ..._props,
+  };
+  if (type === "button") {
     return (
       <ButtonLink className={className} {...props}>
         {children}
       </ButtonLink>
-    )
+    );
   }
   return (
     <InlineLink className={className} {...props}>
       {children}
     </InlineLink>
-  )
-}
+  );
+};
 
-export default Link
+export default Link;

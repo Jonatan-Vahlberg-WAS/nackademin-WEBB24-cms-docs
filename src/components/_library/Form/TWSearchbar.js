@@ -1,15 +1,18 @@
-
-
 import { cn } from "@/utils/cn";
 import Button from "../Button/TWButton";
 
-export const SearchbarButton = ({ loading = false, onClick = () => {}, className = "", ...props }) => {
+export const SearchbarButton = ({
+  loading = false,
+  onClick = () => {},
+  className = "",
+  ...props
+}) => {
   return (
     <Button
       type="button"
       className={cn(
-        "tw:!h-10 tw:!w-10 tw:!flex tw:!justify-center tw:!items-center tw-disabled:tw-opacity-50 tw:!rounded-sm",
-        "tw:!transition-colors tw:!duration-300 tw:!ease-in-out",
+        "h-10 w-10 flex justify-center items-center tw-disabled:tw-opacity-50 rounded-sm",
+        "transition-colors duration-300 ease-in-out",
         className
       )}
       disabled={loading}
@@ -21,7 +24,7 @@ export const SearchbarButton = ({ loading = false, onClick = () => {}, className
       <i className="fa fa-repeat"></i>
     </Button>
   );
-}
+};
 
 const Searchbar = ({
   searchTerm,
@@ -33,29 +36,29 @@ const Searchbar = ({
   handleSearch = () => {},
 }) => {
   const wrapperClasses = cn(
-    "tw:!flex tw:!justify-center tw:!items-center tw:!px-3 tw:!py-2 tw:!bg-gray-50 tw:!mb-2 tw:!mr-2 tw:!mt-2",
+    "flex justify-center items-center px-3 py-2 bg-gray-50 mb-2 mr-2 mt-2",
     {
-      "tw:!w-[350px]": staff,
-      "tw:!w-auto": !staff,
+      "w-[350px]": staff,
+      "w-auto": !staff,
     },
-    "tw:md:!w-full"
+    "md:!w-full"
   );
 
   const inputClasses = cn(
-    "tw:!flex-1 tw:!bg-gray-50 tw:!rounded-md tw:!text-sm tw:!leading-tight tw:!border-none tw:!focus:outline-hidden",
-    "tw:!transition-colors tw:!duration-300 tw:!ease-in-out",
-    "tw:!px-2 tw:!py-1 tw:!h-6",
+    "flex-1 bg-gray-50 rounded-md text-sm leading-tight border-none focus:outline-hidden",
+    "transition-colors duration-300 ease-in-out",
+    "px-2 py-1 h-6",
     {
-      "tw:!w-[350px]": staff,
-      "tw:!w-auto": !staff,
+      "w-[350px]": staff,
+      "w-auto": !staff,
     },
-    "tw:md:!w-full"
+    "md:!w-full"
   );
 
   return (
-    <div className="tw:!flex tw:!flex-row tw:!items-center tw:!justify-center">
+    <div className="flex flex-row items-center justify-center">
       <div className={wrapperClasses} style={{ width }}>
-        <i className="fa fa-search tw:!text-gray-500 tw:!text-xs tw:!mr-2"></i>
+        <i className="fa fa-search text-gray-500 text-xs mr-2"></i>
         <input
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
@@ -64,9 +67,7 @@ const Searchbar = ({
           className={inputClasses}
         />
       </div>
-      {!staff && (
-        <SearchbarButton loading={loading} onClick={handleSearch} />
-      )}
+      {!staff && <SearchbarButton loading={loading} onClick={handleSearch} />}
     </div>
   );
 };

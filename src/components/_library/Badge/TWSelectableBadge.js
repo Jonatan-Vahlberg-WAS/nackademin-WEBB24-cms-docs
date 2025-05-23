@@ -5,31 +5,36 @@ const selectableBadgeProps = {
   ...badgeProps,
   isSelected: false,
   iconPlacedInFront: false,
-  selectedVariant: 'info',
-  unselectedVariant: 'default',
+  selectedVariant: "info",
+  unselectedVariant: "default",
   onClick: () => {},
-}
+};
 
 const SelectableBadge = (_props = selectableBadgeProps) => {
-  const { isSelected, iconPlacedInFront, selectedVariant, unselectedVariant, onClick, children, ...props } = {
+  const {
+    isSelected,
+    iconPlacedInFront,
+    selectedVariant,
+    unselectedVariant,
+    onClick,
+    children,
+    ...props
+  } = {
     ...selectableBadgeProps,
-    ..._props
-  }
+    ..._props,
+  };
 
   const badgeClasses = cn(
-    "tw:!cursor-pointer",
-    "tw:hover:!filter tw:hover:!brightness-95"
+    "cursor-pointer",
+    "hover:!filter hover:!brightness-95"
   );
 
-  const iconClasses = cn(
-    'tw:!text-xs tw-line-9 tw:!leading-none',
-    {
-      'fas fa-minus': isSelected,
-      'fas fa-plus': !isSelected,
-      'tw:!ml-1': iconPlacedInFront,
-      'tw:!mr-1': !iconPlacedInFront,
-    }
-  );
+  const iconClasses = cn("text-xs tw-line-9 leading-none", {
+    "fas fa-minus": isSelected,
+    "fas fa-plus": !isSelected,
+    "ml-1": iconPlacedInFront,
+    "mr-1": !iconPlacedInFront,
+  });
 
   return (
     <Badge
@@ -37,7 +42,7 @@ const SelectableBadge = (_props = selectableBadgeProps) => {
       {...props}
       className={badgeClasses}
       variant={isSelected ? selectedVariant : unselectedVariant}
-      border={isSelected && props.border !== 'none' ? props.border : 'none'}
+      border={isSelected && props.border !== "none" ? props.border : "none"}
       onClick={onClick}
     >
       {!iconPlacedInFront && <i className={iconClasses} />}

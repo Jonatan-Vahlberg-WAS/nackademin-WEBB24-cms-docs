@@ -1,13 +1,17 @@
-import { cn } from '../../../../utils/cn'
+import { cn } from "../../../../utils/cn";
 
 const DrawerBody = ({ children, className, ...props }) => {
-  const bodyClasses = cn('tw:!relative tw:!flex tw:!flex-col tw:!p-6', 'tw:!flex-1 tw:!fgrow-1', className)
+  const bodyClasses = cn(
+    "relative flex flex-col p-6",
+    "flex-1 fgrow-1",
+    className
+  );
 
   return (
     <div className={bodyClasses} {...props}>
       {children}
     </div>
-  )
-}
+  );
+};
 
-export default DrawerBody
+export default DrawerBody;

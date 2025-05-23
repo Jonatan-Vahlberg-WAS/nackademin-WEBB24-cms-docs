@@ -1,15 +1,15 @@
-import { cn } from '../../../utils/cn'
-
+import { cn } from "../../../utils/cn";
 
 const FormError = ({ error, touched = false, className, ...props }) => {
   if (!error || !touched) {
     return null;
   }
-  const errorClasses = cn(
-    'tw:!text-red-700 tw:!text-sm tw:!mt-1',
-    className || ''
+  const errorClasses = cn("text-red-700 text-sm mt-1", className || "");
+  return (
+    <div className={errorClasses} {...props}>
+      {error}
+    </div>
   );
-  return <div className={errorClasses} {...props}>{error}</div>;
-}
+};
 
 export default FormError;

@@ -25,18 +25,22 @@ const SearchSelector = ({
   mapOptions = (options = []) => [],
   ...props
 }) => {
-  const searchRef = useRef(null)
-  const [currentPreviousQuery, setCurrentPreviousQuery] = useState(previousQuery)
+  const searchRef = useRef(null);
+  const [currentPreviousQuery, setCurrentPreviousQuery] =
+    useState(previousQuery);
 
   const getOptions = useCallback(
     (query) => {
-      query = selectedOption && !query && currentPreviousQuery ? currentPreviousQuery : query
+      query =
+        selectedOption && !query && currentPreviousQuery
+          ? currentPreviousQuery
+          : query;
       const onComplete = (response, resolve) => {
         if (paginated) {
-          resolve(mapOptions(response.data.results))
+          resolve(mapOptions(response.data.results));
           return;
         }
-        resolve(mapOptions(response.data))
+        resolve(mapOptions(response.data));
       };
 
       return new Promise((resolve, reject) => {
@@ -67,13 +71,13 @@ const SearchSelector = ({
   }
 
   const wrapperClasses = cn(
-    "tw:!w-full select-search-custom-wrapper",
+    "w-full select-search-custom-wrapper",
     {
       "with-chevron": withChevron,
-      "error": error,
+      error: error,
     },
     wrapperClassName
-  )
+  );
 
   return (
     <SearchSelectorWrapper className={wrapperClasses}>
@@ -87,7 +91,9 @@ const SearchSelector = ({
         placeholder={placeholder}
         onChange={(value, option) => {
           if (usePreviousQuery) {
-            setCurrentPreviousQuery(searchRef.current.querySelector("input").value)
+            setCurrentPreviousQuery(
+              searchRef.current.querySelector("input").value
+            );
           }
           setSelectedOption(option);
         }}

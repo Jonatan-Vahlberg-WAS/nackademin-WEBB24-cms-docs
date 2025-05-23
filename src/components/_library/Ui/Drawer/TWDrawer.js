@@ -1,10 +1,10 @@
-import { cn } from '@/utils/cn';
-import ScrollWrapper from '@/components/Modal/ScrollWrapper';
-import DefaultDrawerHeader from './TWDrawerHeader';
-import { useState } from 'react';
+import { cn } from "@/utils/cn";
+import ScrollWrapper from "@/components/Modal/ScrollWrapper";
+import DefaultDrawerHeader from "./TWDrawerHeader";
+import { useState } from "react";
 
 const Drawer = ({
-  drawerStorageKey = 'drawer',
+  drawerStorageKey = "drawer",
   isOpen = false,
   allowScroll = false,
   actions = {},
@@ -12,55 +12,57 @@ const Drawer = ({
   DrawerHeader,
   DrawerFooter,
   className,
-  color = 'white',
+  color = "white",
   toggle = () => {},
   ActionBar = () => null,
   ...props
 }) => {
   DrawerHeader = DrawerHeader || DefaultDrawerHeader;
 
-  const [forceExpanded, setForceExpanded] = useState(localStorage.getItem(drawerStorageKey) === 'true' || false);
+  const [forceExpanded, setForceExpanded] = useState(
+    localStorage.getItem(drawerStorageKey) === "true" || false
+  );
 
   const overlayClasses = cn(
-    'tw:!fixed tw:!inset-0 tw:!z-[999] tw:!cursor-pointer',
+    "fixed inset-0 z-[999] cursor-pointer",
     {
-      'tw:!bg-black/50 tw:!visible tw:!opacity-100': isOpen,
-      'tw:!bg-transparent tw:!invisible tw:!opacity-0': !isOpen
+      "bg-black/50 visible opacity-100": isOpen,
+      "bg-transparent invisible opacity-0": !isOpen,
     },
-    'tw:!transition-all tw:!duration-300'
-  )
+    "transition-all duration-300"
+  );
 
   const drawerClasses = cn(
-    'tw:!absolute tw:!flex tw:!flex-col tw:!top-0 tw:!right-0 tw:!bottom-0 tw:!z-[1000] tw:!bg-white tw:!h-screen tw:!cursor-default tw:!overflow-hidden',
-    'tw:!transition-[width] tw:!duration-250 tw:!ease-in-out',
+    "absolute flex flex-col top-0 right-0 bottom-0 z-[1000] bg-white h-screen cursor-default overflow-hidden",
+    "transition-[width] duration-250 ease-in-out",
     {
-      'tw:!w-0': !isOpen,
-      'tw:!w-full tw:xl:!w-main-content': isOpen && !forceExpanded,
-      'tw:!w-full tw:xl:!w-full': isOpen && forceExpanded,
-      'tw:!bg-gray-50': color === 'gray'
+      "w-0": !isOpen,
+      "w-full xl:!w-main-content": isOpen && !forceExpanded,
+      "w-full xl:!w-full": isOpen && forceExpanded,
+      "bg-gray-50": color === "gray",
     },
     className
-  )
+  );
 
   const drawerBodyClasses = cn(
-    'tw:!px-6  tw:!flex tw:!flex-col tw:!flex-1 tw:!overflow-y-auto tw:!overflow-x-hidden tw:!box-border'
-  )
-  
+    "px-6  flex flex-col flex-1 overflow-y-auto overflow-x-hidden box-border"
+  );
+
   return (
     <ScrollWrapper isOpen={isOpen} allowScroll={allowScroll} prefix="drawer">
       <div className={overlayClasses} onMouseDown={toggle} isOpen={isOpen}>
-        <div 
-          className={drawerClasses} 
-          onMouseDown={(e) => e.stopPropagation()} 
-          onClick={(e) => e.stopPropagation()} 
+        <div
+          className={drawerClasses}
+          onMouseDown={(e) => e.stopPropagation()}
+          onClick={(e) => e.stopPropagation()}
           {...props}
         >
-          <DrawerHeader 
-            toggle={toggle} 
+          <DrawerHeader
+            toggle={toggle}
             forceExpanded={forceExpanded}
             setForceExpanded={(value) => {
-              setForceExpanded(value)
-              localStorage.setItem(drawerStorageKey, JSON.stringify(value))
+              setForceExpanded(value);
+              localStorage.setItem(drawerStorageKey, JSON.stringify(value));
             }}
           />
           <div className={drawerBodyClasses}>{children}</div>
@@ -69,7 +71,7 @@ const Drawer = ({
         </div>
       </div>
     </ScrollWrapper>
-  )
-}
+  );
+};
 
-export default Drawer
+export default Drawer;

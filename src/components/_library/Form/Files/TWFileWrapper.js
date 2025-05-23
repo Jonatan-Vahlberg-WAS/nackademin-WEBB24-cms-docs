@@ -1,25 +1,24 @@
-import { cn } from "@/utils/cn"
+import { cn } from "@/utils/cn";
 
-
-const FileWrapper = ({ 
+const FileWrapper = ({
   iconSize,
   bg,
   className,
   onClick,
   setIsHovered = () => {},
   children,
- }) => {
+}) => {
   const fileWrapperClasses = cn(
-    'tw:!flex tw:!items-center tw:!gap-2',
+    "flex items-center gap-2",
     {
-      'tw:!gap-0': iconSize === 'xs',
-      'tw:!gap-1': iconSize === 'sm',
-      [`tw:!bg-${bg}-100 tw:!bg-${bg}-50 tw:!rounded-sm tw:!p-2 tw:!cursor-pointer`]: bg,
-      'tw:!cursor-default': !onClick,
-      [`tw:hover:!filter tw:hover:!brightness-95`]: !!onClick
+      "gap-0": iconSize === "xs",
+      "gap-1": iconSize === "sm",
+      [`bg-${bg}-100 bg-${bg}-50 rounded-sm p-2 cursor-pointer`]: bg,
+      "cursor-default": !onClick,
+      [`hover:!filter hover:!brightness-95`]: !!onClick,
     },
     className
-  )
+  );
 
   return (
     <div
@@ -30,8 +29,7 @@ const FileWrapper = ({
     >
       {children}
     </div>
-  )
-}
+  );
+};
 
-export default FileWrapper
-
+export default FileWrapper;

@@ -1,30 +1,31 @@
+import T from "../Ui/TWTypography";
+import { cn } from "../../../utils/cn";
 
-import T from "../Ui/TWTypography"
-import { cn } from "../../../utils/cn"
-
-
-const SelectItem = ({ 
+const SelectItem = ({
   item,
   isSelected = false,
   selectItem = () => {},
   disabled = false,
 }) => {
   const itemClasses = cn(
-    'tw:!py-2 tw:!px-2 tw:!transition-colors tw:!duration-200 tw:!leading-none',
+    "py-2 px-2 transition-colors duration-200 leading-none",
     {
-      'tw:!border-b-4 tw:!border-green-600 tw:!text-black': isSelected,
-      'tw:!border-b-4 tw:!border-red-600 tw:!text-red-600': isSelected && item.error,
-      'tw:!cursor-not-allowed tw:!border-b tw:!border-green-400 tw:!text-green-400': disabled && isSelected,
-      'tw:!text-gray-400 tw:!cursor-pointer': !disabled && !isSelected,
+      "border-b-4 border-green-600 text-black": isSelected,
+      "border-b-4 border-red-600 text-red-600": isSelected && item.error,
+      "cursor-not-allowed border-b border-green-400 text-green-400":
+        disabled && isSelected,
+      "text-gray-400 cursor-pointer": !disabled && !isSelected,
     }
-  )
+  );
   return (
-    <button className={itemClasses} onClick={() => selectItem(item)} disabled={disabled || isSelected}>
-      <T.ButtonText>
-        {item.text}
-      </T.ButtonText>
+    <button
+      className={itemClasses}
+      onClick={() => selectItem(item)}
+      disabled={disabled || isSelected}
+    >
+      <T.ButtonText>{item.text}</T.ButtonText>
     </button>
-  )
-}
+  );
+};
 
-export default SelectItem
+export default SelectItem;

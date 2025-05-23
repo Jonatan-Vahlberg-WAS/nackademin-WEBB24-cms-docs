@@ -1,25 +1,19 @@
-import { cn } from "../../../utils/cn"
+import { cn } from "../../../utils/cn";
 
-const ExpandableHeader = ({
-  showDivider,
-  children,
-  className,
-  ...props
-}) => {
-
+const ExpandableHeader = ({ showDivider, children, className, ...props }) => {
   const headerClasses = cn(
-    'tw:!flex tw:!flex-row tw:!justify-between tw:!items-center tw:!p-2 tw:!cursor-pointer tw:!*:cursor-pointer',
+    "flex flex-row justify-between items-center p-2 cursor-pointer *:cursor-pointer",
     {
-      'tw:!border-b tw:!border-gray-200': showDivider,
+      "border-b border-gray-200": showDivider,
     },
     className || ""
-  )
+  );
 
   return (
     <div className={headerClasses} {...props}>
       {children}
     </div>
-  )
-}
+  );
+};
 
-export default ExpandableHeader
+export default ExpandableHeader;

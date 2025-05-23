@@ -1,29 +1,29 @@
-import SelectSearch from 'react-select-search'
-import { useCallback } from 'react'
-import SearchSelectorWrapper from './SearchSelectorWrapper'
-import { cn } from '@/utils/cn'
+import SelectSearch from "react-select-search";
+import { useCallback } from "react";
+import SearchSelectorWrapper from "./SearchSelectorWrapper";
+import { cn } from "@/utils/cn";
 
 const SearchSelectorLocal = ({
   options = [],
   selectedOption,
-  placeholder = '',
-  searchPlaceholder = '',
-  emptyMessage = '',
+  placeholder = "",
+  searchPlaceholder = "",
+  emptyMessage = "",
   children,
   error,
   withChevron = false,
-  wrapperClassName = '',
+  wrapperClassName = "",
   setSelectedOption = (option) => {},
   ...props
 }) => {
   const wrapperClasses = cn(
-    'tw:!w-full select-search-custom-wrapper',
+    "w-full select-search-custom-wrapper",
     {
-      'with-chevron': withChevron,
-      error: error
+      "with-chevron": withChevron,
+      error: error,
     },
     wrapperClassName
-  )
+  );
   return (
     <SearchSelectorWrapper className={wrapperClasses}>
       {children}
@@ -33,13 +33,13 @@ const SearchSelectorLocal = ({
         search
         placeholder={placeholder}
         onChange={(value, option) => {
-          setSelectedOption(option)
+          setSelectedOption(option);
         }}
         emptyMessage={emptyMessage}
         {...props}
       />
     </SearchSelectorWrapper>
-  )
-}
+  );
+};
 
-export default SearchSelectorLocal
+export default SearchSelectorLocal;

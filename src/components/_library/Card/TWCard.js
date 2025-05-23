@@ -1,32 +1,32 @@
-import { cn } from '../../../utils/cn'
+import { cn } from "../../../utils/cn";
 
-const Card = ({ 
-  shadowed = true, 
-  modal = false, 
-  size = 'md',
-  children, 
-  className, 
-  ...props 
+const Card = ({
+  shadowed = true,
+  modal = false,
+  size = "md",
+  children,
+  className,
+  ...props
 }) => {
   const cardClasses = cn(
-    'tw:!bg-white',
-    'tw:!rounded-[4px]',
-    'tw:!p-6',
+    "bg-white",
+    "rounded-[4px]",
+    "p-6",
     {
-      'tw:!mb-0': modal,
-      'tw:!mb-4': !modal,
-      'tw:!shadow-custom': shadowed,
-      'tw:!p-6': size === 'md',
-      'tw:!p-4': size === 'sm',
-      'tw:!p-2': size === 'xs',
+      "mb-0": modal,
+      "mb-4": !modal,
+      "shadow-custom": shadowed,
+      "p-6": size === "md",
+      "p-4": size === "sm",
+      "p-2": size === "xs",
     },
     className
-  )
+  );
   return (
     <div shadowed={shadowed} className={cardClasses} {...props}>
       {children}
     </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;
