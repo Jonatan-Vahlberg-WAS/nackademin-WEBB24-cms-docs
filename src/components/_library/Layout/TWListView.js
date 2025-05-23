@@ -1,0 +1,29 @@
+import { cn } from '../../../utils/cn'
+
+import Layout from './TWLayout'
+import MainContainer from './TWMainContainer'
+
+const ListView = ({ children, layoutProps = {}, wrapperProps = {} }) => {
+  return (
+    <Layout
+      style={{
+        minHeight: 'calc(100vh - 56px)'
+      }}
+      {...layoutProps}
+    >
+      <MainContainer>
+        <div
+          className={cn(
+            'tw:!min-h-full tw:!h-full tw:!mx-4 tw:lg:!mx-0',
+            wrapperProps.className || '' // Merge any custom classes passed
+          )}
+          {...wrapperProps}
+        >
+          {children}
+        </div>
+      </MainContainer>
+    </Layout>
+  )
+}
+
+export default ListView
