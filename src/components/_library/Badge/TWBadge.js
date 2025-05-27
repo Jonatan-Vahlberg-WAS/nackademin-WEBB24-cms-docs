@@ -1,4 +1,4 @@
-import { cn } from "@/utils/cn";
+import { cn } from "../../../utils/cn";
 
 export const badgeProps = {
   variant: "info",
@@ -8,6 +8,7 @@ export const badgeProps = {
   className: "",
   children: "",
   background: "",
+  hoverable: false,
 };
 
 const Badge = (_props = badgeProps) => {
@@ -17,8 +18,10 @@ const Badge = (_props = badgeProps) => {
     size,
     border,
     className,
+    wrapperClassName,
     children,
     background,
+    hoverable,
     ...props
   } = {
     ...badgeProps,
@@ -53,6 +56,12 @@ const Badge = (_props = badgeProps) => {
       "border-yellow-300/25": border === "thin" && variant === "warning",
       "border-green-600/25": border === "thin" && variant === "success",
       "border-red-200/25": border === "thin" && variant === "danger",
+      "cursor-pointer transition-all duration-300": hoverable,
+      "hover:bg-gray-300": hoverable && variant === "default",
+      "hover:bg-blue-300": hoverable && variant === "info",
+      "hover:bg-yellow-300": hoverable && variant === "warning",
+      "hover:bg-green-300": hoverable && variant === "success",
+      "hover:bg-red-300": hoverable && variant === "danger",
     },
     className || ""
   );
@@ -60,7 +69,7 @@ const Badge = (_props = badgeProps) => {
   const badgeWrapperClasses = cn({
     "h-6.5": size === "xs",
     "h-9.5": size === "sm",
-  });
+  }, wrapperClassName || "");
 
   return (
     <div className={badgeWrapperClasses}>

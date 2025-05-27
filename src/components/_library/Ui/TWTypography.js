@@ -1,4 +1,3 @@
-import i18next from "i18next";
 import { cn } from "../../../utils/cn";
 import moment from "moment";
 
@@ -81,9 +80,7 @@ const T = {
       <T.Text className={className} {...props}>
         {children}
         <T.Timestamp className="text-md">
-          {i18next.t(`general.actions.lastUpdated`, {
-            date: moment(date).format("YYYY-MM-DD HH:mm"),
-          })}
+          {children}
         </T.Timestamp>
       </T.Text>
     );
@@ -102,6 +99,39 @@ const T = {
         )}
         {...props}
       >
+        {children}
+      </span>
+    );
+  },
+  FrostedGlassText: ({
+    children,
+    className = "",
+    variant = "raised", // 'raised' or 'engraved'
+    blur = "md",
+    ...props
+  }) => {
+    const textClasses = cn(
+      "relative font-bold",
+      "bg-clip-text text-transparent",
+      "bg-gradient-to-br",
+      {
+        // Raised effect
+        "from-white/90 to-white/70": variant === "raised",
+        "drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]": variant === "raised",
+        // Engraved effect
+        "from-white/40 to-white/20": variant === "engraved",
+        "drop-shadow-[0_2px_2px_rgba(255,255,255,0.3)]": variant === "engraved",
+      },
+      {
+        "backdrop-blur-sm": blur === "sm",
+        "backdrop-blur-md": blur === "md",
+        "backdrop-blur-lg": blur === "lg",
+      },
+      className
+    );
+
+    return (
+      <span className={textClasses} {...props}>
         {children}
       </span>
     );
