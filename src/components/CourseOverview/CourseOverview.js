@@ -8,7 +8,7 @@ import courseDetails from "../../../courseDetails";
 import { useState } from "react";
 import Dialog from "../_library/Dialog/TWDialog";
 import { cn } from "../../utils/cn";
-import CourseSchedule from "./CourseSchema";
+import CourseSchedule from "./CourseSchedule";
 import CourseConsultantDialog from "./CourseConsultantDialog";
 
 const CourseOverview = () => {
