@@ -23,6 +23,10 @@ def create_lesson(path: str, title: str, position: int):
     # Create the target directory if it doesn't exist
     target_dir.mkdir(parents=True, exist_ok=True)
 
+    # Create assets directory
+    assets_dir = target_dir / "assets"
+    assets_dir.mkdir(exist_ok=True)
+
     # Copy all files from template directory
     for file in template_dir.glob("*.md"):
         if file.is_file():
