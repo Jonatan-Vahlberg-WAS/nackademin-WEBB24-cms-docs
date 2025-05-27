@@ -10,8 +10,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'Nackademin - Application Lifecycle Management',
+  tagline: 'Hur kan vi använda ALM i fullstackutveckling?',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
