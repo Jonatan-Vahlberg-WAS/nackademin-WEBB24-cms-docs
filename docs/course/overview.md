@@ -6,7 +6,7 @@ sidebar_position: 1
 import CourseSchedule from '@site/src/components/CourseOverview/CourseSchedule';
 
 
-## [Inför kursen](https://www.notion.so/Inf-r-kursen-1ea17cd1771580e195ffd9c94ae31ce0?pvs=21)
+### [Inför kursen - Förberedelser och andra tips](/docs/course/preperation)
 
 ## Baskod för lektionerna
 

@@ -4,6 +4,9 @@ title: Git Best Practices
 en_title_slug: git-best-practices
 ---
 
+import AlmGitFlow from '@site/src/components/alm/AlmGitFlow';
+import BranchTypesGitFlow from '@site/src/components/alm/BranchTypesGitFlow';
+
 För att arbeta effektivt med Git i team eller större projekt är det viktigt att följa gemensamma arbetsrutiner. Nedan följer etablerade best practices som gör arbetsflödet tydligare, hållbart och mer samarbetsvänligt.
 
 ---
@@ -33,7 +36,8 @@ Att arbeta i rätt typ av branch och ge den ett tydligt, konsekvent namn gör de
 - **`staging/`** – Branch för stagingmiljö innan release
     
     *Exempel:* `staging/release-v1.4`
-    
+
+<BranchTypesGitFlow />
 
 ### ✅ Tips för branch-namn:
 
@@ -173,3 +177,4 @@ git push origin --delete feature/old-branch
 📌 *Tips:* GitHub och GitLab visar stale branches i gränssnittet.
 
 ---
+<AlmGitFlow />
