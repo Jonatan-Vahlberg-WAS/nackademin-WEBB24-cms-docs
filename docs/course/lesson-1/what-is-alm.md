@@ -28,7 +28,7 @@ Vi kommer att gå igenom:
 
 ALM (Application Lifecycle Management) är en helhetsstrategi för att hantera livscykeln hos en applikation. Det innefattar både processer, verktyg och människor, och sträcker sig från den första idéfasen till applikationens slutgiltiga avveckling.
 
-![ALM-EN-nobackground.png](attachment:e0a4cc8a-d251-4b83-beeb-35d29a194d49:ALM-EN-nobackground.png)
+![alm_e2e.png](./assets/alm_e2e.png)
 
 ### Faser i ALM:
 
@@ -54,7 +54,7 @@ ALM (Application Lifecycle Management) är en helhetsstrategi för att hantera l
 
 Ett välfungerande ALM-system skapar struktur i komplexa utvecklingsmiljöer. Det möjliggör spårbarhet, transparens och kvalitetskontroll genom hela processen.
 
-![alm_overview.png](attachment:804dcfae-ed36-4b03-97fc-ebf91bb9f24d:alm_overview.png)
+![alm_overview.png](./assets/alm_overview.png)
 
 ### Fördelar:
 
@@ -141,7 +141,7 @@ Efter **fyra utvecklingsveckor** ska teamet leverera en MVP. Den ska innehålla 
 
 Använd **MoSCoW-metoden** för att prioritera era funktioner:
 
-![image.png](attachment:4e0ca85e-fe0e-4a63-a495-7844cd756c3f:image.png)
+![alm_moscow.png](./assets/alm_moscow.png)
 
 > MoSCoW-metoden:
 > 

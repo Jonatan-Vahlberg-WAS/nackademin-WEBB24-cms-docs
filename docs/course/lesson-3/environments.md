@@ -4,7 +4,7 @@ title: Miljöer
 en_title_slug: environments
 ---
 
-![Environments-in-Software-Development.webp](attachment:931aa095-8e64-4a17-b524-5765be39f4a0:Environments-in-Software-Development.webp)
+![alm_enviroments.png](./assets/alm_enviroments.png)
 
 ### Olika typer av miljöer inom utveckling
 
