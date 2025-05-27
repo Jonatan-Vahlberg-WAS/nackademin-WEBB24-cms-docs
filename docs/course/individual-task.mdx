@@ -1,0 +1,61 @@
+---
+sidebar_position: 7
+title: Individuell uppgift
+---
+
+### Individuella uppgifter för VG
+
+Om du inte är repo-ägaren, forka repot till ditt eget GitHub-konto och gör följande ändringar. Om du är det, fortsätt bara med uppgifterna nedan:
+
+- [ ]  **Uppdatera databasen för att använda PostgreSQL**
+- [ ]  **Uppdatera koden för att använda PostgreSQL**
+- [ ]  **Skapa en docker-compose.yml-fil för att starta applikationen med PostgreSQL**
+- [ ]  **distribuera lokalt med docker compose**
+
+*docker/docker-compose.yml*
+
+```yaml
+version: '3.8'
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+app:
+    ...
+    build:
+        context: .
+        dockerfile: dockerfile
+    environment:
+      DB_HOST: db
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_NAME: postgres
+    ports:
+        ...
+    depends_on:
+      - db
+volumes:
+  pgdata:
+
+```
+
+*Distribuera lokalt med docker compose*
+
+```bash
+docker compose up ./docker/docker-compose.yml
+```
+
+*Stäng ner applikationen*
+
+```bash
+docker compose down ./docker/docker-compose.yml
+
+```

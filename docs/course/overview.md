@@ -1,80 +1,73 @@
 ---
+title: Översikt
 sidebar_position: 1
 ---
 
-# Översikt
+import CourseSchedule from '@site/src/components/CourseOverview/CourseSchedule';
 
-[Inför kursen](https://www.notion.so/Inf-r-kursen-1ea17cd1771580e195ffd9c94ae31ce0?pvs=21)
 
-# Baskod för lektionerna
+## [Inför kursen](https://www.notion.so/Inf-r-kursen-1ea17cd1771580e195ffd9c94ae31ce0?pvs=21)
 
-### Backend
+## Baskod för lektionerna
 
-https://github.com/Jonatan-Vahlberg-WAS/core-academy
+### [Backend](https://github.com/Jonatan-Vahlberg-WAS/core-academy)
 
-https://prod.liveshare.vsengsaas.visualstudio.com/join?C6D44AE371511D443623FE95C8B09E7EDA85
+## Schema
+<CourseSchedule />
+---
+## Gruppuppgift
 
-# Schema
+[Gruppuppgiften](/docs/course/group-task)
 
-| **Vecka** | **Datum** | **Innehåll** |
-| --- | --- | --- |
-| 19 | 8/5 |  ALM och dess betydelse i programmeringsprojekt |
-| 19 | 9/5 | Versionshantering |
-| 20 | 15/5 | Miljöer & Automation |
-| 20 | 16/5 | Docker |
-| 21 | 22/5 | Kubernetes & MiniKube |
-| 21 | 23/5 | Grupparbete (Betygsgrundande) |
-| 22 | 26/5 | Mentortid |
-| 22 | 27/5 | Presentation (DISTANS) |
+## Individuella uppgiften
 
-# Gruppuppgift
+[Individuella uppgiften](/docs/course/individual-task)
 
-<aside>
-💡
+---
 
-Information om grupp uppgiften kommer läggas ut  **xx/x/2025**
+## Lektioner
 
-</aside>
+### [Lektion 1 - ALM och dess betydelse i programmeringsprojekt](/docs/category/lektion-1)
+Grundläggande begrepp och verktyg inom Application Lifecycle Management (ALM).
 
-# Individuella uppgiften
+### [Lektion 2 - Versionshantering](category/lektion-2)
+Hur använder vi oss av Git och GitHub för att hantera kod på ett smart effektivt och skalbart sätt.
 
-<aside>
-💡
+### [Lektion 3 - Miljöer & Automation](category/lektion-3)
+Miljöer och automation är viktiga för att skapa en effektiv utvecklingsprocess. Hur kan vi automatisera våra utvecklingsprocesser?
 
-Information om den Individuella uppgiften kommer läggas ut senast **xx/x/2025**
+### [Lektion 4 - Docker](category/lektion-4)
+Docker är ett verktyg som gör det enklare att skapa, distribuera och hantera containeriserade applikationer.
 
-</aside>
+### [Lektion 5 - Kubernetes](category/lektion-5)
+Kubernetes är ett verktyg som gör det enklare att skala och hantera containeriserade applikationer.
 
-# Lektioner
+### Lektion 6 - Gruppuppgift (Betygsgrundande)
+Följ instruktionerna i [Gruppuppgiften](/docs/course/group-task) för att lösa uppgiften.
 
-## Lektion 1 - ALM och dess betydelse i programmeringsprojekt
-
-[Lektion 1](category/lektion-1)
-
-## Lektion 2 - Versionshantering
-
-[Lektion 2](category/lektion-2)
-
-## Lektion 3 - Miljöer & Automation
-
-[Lektion 3](category/lektion-3)
-
-## Lektion 4 - Docker
-
-[Lektion 4](category/lektion-4)
-
-## Lektion 5 - Kubernetes
-
-## [Lektion 5](category/lektion-5)
-
-## Lektion 6 - Gruppuppgift (Betygsgrundande)
-
-Information kommer
-
-## Lektion 7 - Stöd för individuella uppgiften
+### Lektion 7 - Stöd för individuella uppgiften
 
 Jag kommer vara på plats i skolan om det är så att någon i klassen har frågor eller behöver stöd.
 
-## Lektion 8 - Presentation (DISTANS)
+### Lektion 8 - Presentation (DISTANS)
+<aside className="bg-gray-100 p-4 rounded-lg">
+    Följ instruktionerna i [Individuella uppgiften](/docs/course/individual-task) för att lösa uppgiften.
 
-Information kommer
+    #### PresentationInstruktioner:
+    För att få VG ska du göra en individuell presentation. Presentationen ska hållas runt 3-6 min där du:
+
+    **1. Beskriver dina tekniska ändringar**
+    Visa hur du bytte från SQLite till PostgreSQL.
+    Förklara hur du skapade och konfigurerade docker-compose.yml.
+    Berätta vilka ändringar du gjorde i miljövariabler och databasinställningar.
+
+    **2. Visar att det fungerar**
+    Starta applikationen med docker compose up.
+    Visa att PostgreSQL är aktiv och används, till exempel via loggar eller adminverktyg.
+    Om något inte fungerar, beskriv hur du felsökte och vad du kom fram till.
+
+    **3. Reflekterar över arbetet**
+    Vad var utmanande med att genomföra ändringarna?
+    Vad lärde du dig om databaser, Docker och containerisering?
+    Hur kan den här typen av setup användas i verkliga projekt?
+</aside>
