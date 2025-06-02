@@ -2,41 +2,82 @@
 sidebar_position: 6
 title: Gruppuppgift
 ---
-https://github.com/Jonatan-Vahlberg-WAS/webb24_alm_group_task
 
-## Beskrivning
+### Kundbeställning: Skapa ett Online-Forum
 
-Detta är en gruppuppgift för kursen Applikationslivscykelhantering på Nackademin.
-**Gruppstorlek:** 2 - 4 personer
-**Datum:** 2025-05-23
-**Tid:** 09:00 - 17:00
+### Uppgift
 
-## Instruktioner
+Bygg ett online-forum där användare kan skapa trådar, skriva inlägg och interagera med varandra. Använd React och TypeScript för att skapa och typa komponenter korrekt. Välj mellan färdiga UI-bibliotek eller egna komponenter.
 
-Gruppen ska forka detta repository och sätta upp projektet med nödvändiga verktyg och teknologier.
+Huvudsakligen ska man kunna skapa en **`Tråd`** och sedan lägga **`Kommentarer`** på tråden
 
-### Teknologier
+### Inspiration
 
-- Git - för versionshantering
-- GitHub - för versionshantering och Actions
-- Docker - för containerisering
+- [Reddit](https://www.reddit.com/)
+- [MacRumors Forums](https://forums.macrumors.com/)
+- [Stack Overflow](https://stackoverflow.com/questions)
+- [Mycotopia](https://mycotopia.net/)
 
-### Kod
+### Typescript
 
-- Express - för API:et
-- SQLite - för databasen
-- Sequelize - för databas ORM
-- Jest - för testning av modeller
+- Allt ska vara typat utan att försöka bryta typescripts fundamentala priciper. (alltså inte type-casta allt till any)
+- Uppgiften görs i `React` eller `Vite` gruppen får bestämma
 
-### Uppgifter
+### Funktionalitet
 
-Av de nedanstående uppgifterna måste gruppen slutföra följande. Alla i gruppen måste bidra till koden. Detta kommer att göras genom att ha ett enda repo med flera bidragsgivare. Och skapa pull requests för varje ny funktion.
+1. Lista alla trådar. (lista/kort spelar ingen roll) Visa namn och vad för sorts tråd det är ta inspiration ovan
+2. Visa tråd i detalj
+3. Skapa en tråd
+4. Skapa en kommentar på en spesifik tråd
+5. Spara trådar och kommentarer i LocalStorage eller annan databas
 
-**Obligatoriska uppgifter**
+### Design
 
-- [ ]  **Koden kommer att ha sina tester köra med GitHub Actions**
-- [ ]  **Koden kommer att containeriseras med en Dockerfile**
-- [ ]  **Accomodation model ska ha en adress, stad, land, postnummer, hyra, rum och eventuellt userId (behöver tester)**
-- [ ]  **User model ska tvinga unik e-post och användarnamn samt validera e-postformat (behöver tester)**
-- [ ]  **User model ska ha ett profilbildsfält som är en url till en bild (behöver tester)**
-- [ ]  **Accomodation model ska CASCADE-raderas när användaren raderas (behöver tester)**
+Design ska vara tydlig och ändmålsampassad. En slut användare ska kunna förstå hur hemsidan kan användas intuitivt. Dock är design sekundärt och funktionalitet primärt
+
+### Typer
+
+Typförslag ni får ändra dessa men inte göra dem mer simpla.
+
+```ts
+type ThreadCategory = "THREAD" | "QNA";
+
+type User = {
+	userName: string;
+	password: string
+}
+
+type Thread = {
+  id: number;
+	title: string;
+	category: ThreadCategory;
+	creationDate: string;
+	description: string;
+	creator: User;
+}
+
+type QNAThread =  Thread & { //Type extension
+	category: "QNA";
+	isAnswered: boolean;
+	commentAnswerId?: number;
+}
+
+type Comment = {
+	id: number;
+	thread: number;
+	content: string;
+	creator: User
+}
+
+```
+
+### Samarbete
+
+Dela upp arbetet och samarbeta för att skapa ett modulärt och väl typat forum.
+
+### Presentation och Code Review
+
+- Demo DD:e MMM på morgonen.
+- Ge och få konstruktiv feedback på andra gruppers projekt.
+
+Lycka till!

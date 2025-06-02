@@ -22,9 +22,9 @@ const CollapsibleCard = ({ title, children, preview = true }) => {
   );
 
   return (
-    <Card className="overflow-hidden relative">
+    <Card className="overflow-hidden relative bg-ifm-background-color-tertiary rounded-t-md mb-6">
       <button className={headerClasses} onClick={() => setIsOpen(!isOpen)}>
-        <h3 className="text-lg font-medium mb-0">{title}s</h3>
+        <h3 className="text-lg font-medium mb-0 text-white">{title}</h3>
         {isOpen ? (
           <FaChevronUp className="text-white" />
         ) : (
@@ -37,7 +37,7 @@ const CollapsibleCard = ({ title, children, preview = true }) => {
         <div className="p-4">{children}</div>
 
         {!isOpen && preview && (
-          <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white pointer-events-none" />
+          <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-ifm-background-color-tertiary pointer-events-none" />
         )}
       </div>
     </Card>

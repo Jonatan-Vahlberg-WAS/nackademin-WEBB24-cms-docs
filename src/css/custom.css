@@ -39,6 +39,11 @@
   
   --shadow-custom: rgba(0, 0, 0, 0.08) 0 3px 6px 0;
   --shadow-deep: 0 2px 4px 0 rgba(0, 0, 0, 0.16);
+
+  --color-ifm-background-color: #fff;
+  --color-ifm-background-color-secondary: #f0f0f0;
+  --color-ifm-background-color-tertiary: #fff;
+  --color-ifm-text-color: #000;
 }
 
 @layer base {
@@ -119,6 +124,11 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+
+    --color-ifm-background-color: #14102c;
+    --color-ifm-background-color-secondary: #231e45;
+    --color-ifm-background-color-tertiary: #231e45;
+    --color-ifm-text-color: #fff;
   }
 
   html {

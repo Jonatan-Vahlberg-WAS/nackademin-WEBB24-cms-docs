@@ -8,10 +8,6 @@ import CourseSchedule from '@site/src/components/CourseOverview/CourseSchedule';
 
 ### [Inför kursen - Förberedelser och andra tips](/docs/course/preperation)
 
-## Baskod för lektionerna
-
-### [Backend](https://github.com/Jonatan-Vahlberg-WAS/core-academy)
-
 ## Schema
 <CourseSchedule />
 ---
@@ -27,47 +23,20 @@ import CourseSchedule from '@site/src/components/CourseOverview/CourseSchedule';
 
 ## Lektioner
 
-### [Lektion 1 - ALM och dess betydelse i programmeringsprojekt](/docs/category/lektion-1)
-Grundläggande begrepp och verktyg inom Application Lifecycle Management (ALM).
+### [Lektion 1 - Typescript (Endast material)](/docs/category/lektion-1)
+Vad är Typescript? Hur kan vi sätta upp en typescript-miljö i React?
 
-### [Lektion 2 - Versionshantering](category/lektion-2)
-Hur använder vi oss av Git och GitHub för att hantera kod på ett smart effektivt och skalbart sätt.
+### [Lektion 2 - Typescript koncept (På plats)](/docs/category/lektion-2)
+Vilka är dem centrala koncepten i Typescript?
 
-### [Lektion 3 - Miljöer & Automation](category/lektion-3)
-Miljöer och automation är viktiga för att skapa en effektiv utvecklingsprocess. Hur kan vi automatisera våra utvecklingsprocesser?
+### [Lektion 3 - Typescript innom React (Endast material)](/docs/category/lektion-3)
+Hur kan vi använda oss av typescript inom React för att bygga säkrare och mer läsbara kod?
 
-### [Lektion 4 - Docker](category/lektion-4)
-Docker är ett verktyg som gör det enklare att skapa, distribuera och hantera containeriserade applikationer.
+### [Lektion 4 - Typescript innom React 2 (På plats)](/docs/category/lektion-4)
+Hur kan vi använda oss av typescript inom React för att bygga säkrare och mer läsbara kod?
 
-### [Lektion 5 - Kubernetes](category/lektion-5)
-Kubernetes är ett verktyg som gör det enklare att skala och hantera containeriserade applikationer.
+### [Lektion 5 - Generics, Guards och Assertions (På plats)](/docs/category/lektion-5)
+Generics, Guards och Assertions en fördjupning i Typescript.
 
-### Lektion 6 - Gruppuppgift (Betygsgrundande)
-Följ instruktionerna i [Gruppuppgiften](/docs/course/group-task) för att lösa uppgiften.
-
-### Lektion 7 - Stöd för individuella uppgiften
-
-Jag kommer vara på plats i skolan om det är så att någon i klassen har frågor eller behöver stöd.
-
-### Lektion 8 - Presentation (DISTANS)
-<aside className="bg-gray-100 p-4 rounded-lg">
-    Följ instruktionerna i [Individuella uppgiften](/docs/course/individual-task) för att lösa uppgiften.
-
-    #### PresentationInstruktioner:
-    För att få VG ska du göra en individuell presentation. Presentationen ska hållas runt 3-6 min där du:
-
-    **1. Beskriver dina tekniska ändringar**
-    Visa hur du bytte från SQLite till PostgreSQL.
-    Förklara hur du skapade och konfigurerade docker-compose.yml.
-    Berätta vilka ändringar du gjorde i miljövariabler och databasinställningar.
-
-    **2. Visar att det fungerar**
-    Starta applikationen med docker compose up.
-    Visa att PostgreSQL är aktiv och används, till exempel via loggar eller adminverktyg.
-    Om något inte fungerar, beskriv hur du felsökte och vad du kom fram till.
-
-    **3. Reflekterar över arbetet**
-    Vad var utmanande med att genomföra ändringarna?
-    Vad lärde du dig om databaser, Docker och containerisering?
-    Hur kan den här typen av setup användas i verkliga projekt?
-</aside>
+### Lektion 6 - Presentationer av individuella uppgiften (Distans i samanslagna grupper)
+Följ instruktionerna i [Individuella uppgiften](/docs/course/individual-task) för att lösa uppgiften och presentera inför undervisaren och andra i klassen.

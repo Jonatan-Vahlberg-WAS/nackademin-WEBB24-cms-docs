@@ -78,6 +78,15 @@ const CourseOverview = () => {
             Schema - ({courseDetails.start})
           </Badge>
         </div>
+        {courseDetails.tags && (
+          <div className="flex flex-wrap gap-2 mt-2">
+            {courseDetails.tags.map((tag) => (
+              <Badge key={tag} shade="light" variant="info">
+                {tag}
+              </Badge>
+            ))}
+          </div>
+        )}
         <T.PageTitle>Kursplan</T.PageTitle>
         <a href={courseDetails.plan} download>
           kursplan.pdf

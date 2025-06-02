@@ -13,7 +13,7 @@ const Table = {
   },
   Header: ({ children, columns = "", className = "", ...props }) => {
     const headerClasses = cn(
-      "bg-gray-100 font-bold text-sm text-gray-600 py-4 px-2",
+      "bg-ifm-background-color-secondary font-bold text-sm text-ifm-text-color py-4 px-2",
       className
     );
 
@@ -37,7 +37,7 @@ const Table = {
     );
   },
   Row: ({ children, columns = "", className = "", ...props }) => {
-    const rowClasses = cn("odd:!bg-gray-100 py-1 px-2", className);
+    const rowClasses = cn("odd:!bg-ifm-background-color-secondary py-1 px-2", className);
 
     return (
       <ListItem defaultColumns={columns} className={rowClasses} {...props}>
