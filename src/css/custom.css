@@ -1,6 +1,6 @@
 @layer theme, base, components, utilities;
-@import 'tailwindcss/theme.css' layer(theme) important;
-@import 'tailwindcss/utilities.css' layer(utilities) important;
+@import "tailwindcss/theme.css" layer(theme) important;
+@import "tailwindcss/utilities.css" layer(utilities) important;
 
 @plugin 'tailwindcss-animate';
 
@@ -36,7 +36,7 @@
 
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
-  
+
   --shadow-custom: rgba(0, 0, 0, 0.08) 0 3px 6px 0;
   --shadow-deep: 0 2px 4px 0 rgba(0, 0, 0, 0.16);
 
@@ -44,6 +44,8 @@
   --color-ifm-background-color-secondary: #f0f0f0;
   --color-ifm-background-color-tertiary: #fff;
   --color-ifm-text-color: #000;
+  --color-ifm-gradient-from: #1a1a2e;
+  --color-ifm-gradient-to: #16213e;
 }
 
 @layer base {
@@ -98,7 +100,7 @@
     --radius: 0.5rem;
   }
 
-  html[data-theme='dark'] {
+  html[data-theme="dark"] {
     /* Shadcn Style new-york - slate */
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -129,10 +131,13 @@
     --color-ifm-background-color-secondary: #231e45;
     --color-ifm-background-color-tertiary: #231e45;
     --color-ifm-text-color: #fff;
+    --color-ifm-gradient-from: #14102c;
+    --color-ifm-gradient-to: #93c5fd;
   }
 
   html {
-    font: var(--ifm-font-size-base) / var(--ifm-line-height-base) var(--ifm-font-family-base);
+    font: var(--ifm-font-size-base) / var(--ifm-line-height-base)
+      var(--ifm-font-family-base);
   }
 }
 
@@ -145,10 +150,12 @@
   --ifm-color-primary: #044cc1;
   --ifm-h1-font-size: 2.5rem;
   --docusaurus-highlighted-code-line-bg: #0000001a;
-  --ifm-global-shadow-tl: 2px 3px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-  --ifm-font-family-base: Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, system-ui, -apple-system,
-    sans-serif, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol';
+  --ifm-global-shadow-tl: 2px 3px 5px 0 rgba(0, 0, 0, 0.2),
+    0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  --ifm-font-family-base: Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans,
+    system-ui, -apple-system, sans-serif, BlinkMacSystemFont, "Segoe UI",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   --menu-link-active: rgba(0, 0, 0, 0.1);
   --ifm-menu-link-padding-vertical: 0.5rem;
   --docs-fg-base: #030712;
@@ -156,11 +163,12 @@
 
   /* Docsearch color */
   --docsearch-key-gradient: linear-gradient(-225deg, #d5dbe4, #f8f8f8);
-  --docsearch-key-shadow: inset 0 -2px 0 0 #cdcde6, inset 0 0 1px 1px #fff, 0 1px 2px 1px #1e235a66;
+  --docsearch-key-shadow: inset 0 -2px 0 0 #cdcde6, inset 0 0 1px 1px #fff,
+    0 1px 2px 1px #1e235a66;
   --docsearch-muted-color: #969faf;
 }
 
-html[data-theme='dark'] {
+html[data-theme="dark"] {
   /* Docusaurus color */
   --prism-background-color: #1d2144;
   --ifm-background-color: #14102c;
@@ -176,7 +184,8 @@ html[data-theme='dark'] {
   --docusaurus-highlighted-code-line-bg: #0000004d;
   --docsearch-muted-color: #7f8497;
   --docsearch-key-gradient: linear-gradient(-26.5deg, #565872, #31355b);
-  --docsearch-key-shadow: inset 0 -2px 0 0 #282d55, inset 0 0 1px 1px #51577d, 0 2px 2px 0 #0304094d;
+  --docsearch-key-shadow: inset 0 -2px 0 0 #282d55, inset 0 0 1px 1px #51577d,
+    0 2px 2px 0 #0304094d;
 }
 
 @utility blog-tags {
@@ -193,7 +202,7 @@ a {
   @apply hover:no-underline;
 }
 
-a[class^='footerLogoLink_'] {
+a[class^="footerLogoLink_"] {
   opacity: 1;
 }
 
@@ -205,13 +214,14 @@ a[class^='footerLogoLink_'] {
 }
 
 .header-github-link::before {
-  content: '';
+  content: "";
   width: 24px;
   height: 24px;
   display: flex;
   background-color: var(--ifm-navbar-link-color);
   mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E");
-  transition: background-color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+  transition: background-color var(--ifm-transition-fast)
+    var(--ifm-transition-timing-default);
 }
 
 .header-github-link:hover::before {
@@ -220,7 +230,7 @@ a[class^='footerLogoLink_'] {
 
 /*  Keyboard search keys */
 kbd {
-  &[class^='searchHint_'] {
+  &[class^="searchHint_"] {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -250,12 +260,12 @@ kbd {
   width: 13.5rem;
 }
 
-code[class^='codeBlockLines_'] {
+code[class^="codeBlockLines_"] {
   white-space: pre-wrap;
   overflow-wrap: anywhere;
 }
 
-div[class^='docItemContainer_'] article img {
+div[class^="docItemContainer_"] article img {
   display: block;
   margin: auto;
   border-radius: 7px;
@@ -265,11 +275,11 @@ div[class^='docItemContainer_'] article img {
   -o-border-radius: 7px;
 }
 
-[class^='title_'] {
+[class^="title_"] {
   font-size: 2.3rem !important;
 }
 
-#__blog-post-container img[class^='img_'] {
+#__blog-post-container img[class^="img_"] {
   border-radius: 7px;
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
@@ -283,5 +293,85 @@ div[class^='docItemContainer_'] article img {
   .navbar__search-input {
     width: 14rem;
     padding: 0 0.5rem 0 2.25rem;
+  }
+}
+
+@layer components {
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+      background-size: 400% 400%;
+    }
+    16.66% {
+      background-position: 25% 75%; /* Intermediate position */
+      background-size: 410% 410%; /* Slight size change */
+    }
+    33.33% {
+      background-position: 75% 25%; /* Intermediate position */
+      background-size: 420% 420%; /* Slight size change */
+    }
+    50% {
+      background-position: 50% 100%; /* Center to bottom */
+      background-size: 400% 400%;
+    }
+    66.66% {
+      background-position: 25% 75%; /* Intermediate position */
+      background-size: 410% 410%; /* Slight size change */
+    }
+    83.33% {
+      background-position: 75% 25%; /* Intermediate position */
+      background-size: 420% 420%; /* Slight size change */
+    }
+    100% {
+      background-position: 0% 50%;
+      background-size: 400% 400%;
+    }
+  }
+
+  .tw-animate-gradient-shift {
+    position: relative;
+    --color-ifm-gradient-from: rgb(147, 197, 253);
+    --color-ifm-gradient-to: rgb(216, 180, 254);
+    background-size: 200% 200%; /* Start with a consistent size */
+    animation: gradient-shift 30s ease-in-out infinite; /* Increased duration for slower, smoother movement */
+    background-image: linear-gradient(
+      45deg,
+      var(--color-ifm-gradient-from) 0%,
+      var(--color-ifm-gradient-to) 25%,
+      var(--color-ifm-gradient-from) 50%,
+      var(--color-ifm-gradient-to) 75%,
+      var(--color-ifm-gradient-from) 100%
+    );
+  }
+
+  .tw-animate-gradient-shift::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+      98deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.3) 25%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.4) 75%,
+      rgba(255, 255, 255, 0.5) 100%
+    );
+  }
+
+  [data-theme="dark"] .tw-animate-gradient-shift {
+    --color-ifm-gradient-from: rgba(89, 28, 135, 0.5);
+    --color-ifm-gradient-to: rgba(30, 58, 138, 0.5);
+  }
+
+  [data-theme="dark"] .tw-animate-gradient-shift::before {
+    background-image: linear-gradient(
+      98deg,
+      rgba(0, 0, 0, 0.05) 0%,
+      rgba(0, 0, 0, 0.15) 50%,
+      rgba(0, 0, 0, 0.05) 100%
+    );
   }
 }

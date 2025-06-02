@@ -62,6 +62,7 @@ const config = {
         logo: {
           alt: 'WEBB24 - Application Lifecycle Management',
           src: 'img/logo_was.svg',
+          srcDark: 'img/logo_was_dark.svg',
         },
         items: [
           {
@@ -88,17 +89,9 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'X',
-                href: 'https://x.com/docusaurus',
-              },
+                label: 'Will & Skill',
+                href: 'https://willandskill.se',
+              }
             ],
           },
         ],

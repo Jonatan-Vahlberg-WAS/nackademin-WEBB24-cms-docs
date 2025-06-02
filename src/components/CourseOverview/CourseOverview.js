@@ -104,9 +104,9 @@ const CourseOverview = () => {
         <T.Text>
           <T.Text>
             {startDate.format("YYYY-MM-DD")} - {endDate.format("YYYY-MM-DD")}
-            <CourseSchedule />
           </T.Text>
         </T.Text>
+        <CourseSchedule />
       </Dialog>
     </div>
   );

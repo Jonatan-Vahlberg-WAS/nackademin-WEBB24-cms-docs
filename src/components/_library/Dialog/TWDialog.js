@@ -37,7 +37,7 @@ const Dialog = ({
       <div className="flex min-h-full items-center justify-center p-4 text-center">
         <div className={backdropClasses} onClick={toggle} aria-hidden="true" />
         <div className={contentClasses} onClick={(e) => e.stopPropagation()}>
-          <Card className="w-full mx-auto">{children}</Card>
+          <Card className="w-full mx-auto bg-ifm-background-color">{children}</Card>
         </div>
       </div>
     </div>
