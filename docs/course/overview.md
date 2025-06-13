@@ -23,20 +23,26 @@ import CourseSchedule from '@site/src/components/CourseOverview/CourseSchedule';
 
 ## Lektioner
 
-### [Lektion 1 - Typescript (Endast material)](/docs/category/lektion-1)
-Vad är Typescript? Hur kan vi sätta upp en typescript-miljö i React?
+### [Lektion 1 - Vad är ett CMS?](/docs/category/lektion-1)
+Vad är ett CMS?
 
-### [Lektion 2 - Typescript koncept (På plats)](/docs/category/lektion-2)
-Vilka är dem centrala koncepten i Typescript?
+### [Lektion 2 - Storyblok introduktion](/docs/category/lektion-2)
+Vad är Storyblok? Hur kan vi använda oss av det inom CMS?
 
-### [Lektion 3 - Typescript innom React (Endast material)](/docs/category/lektion-3)
-Hur kan vi använda oss av typescript inom React för att bygga säkrare och mer läsbara kod?
+### [Lektion 3 - Storyblok + Nextjs](/docs/category/lektion-3)
+Hur kan vi använda oss av Storyblok och Nextjs för att bygga webbplatser?
 
-### [Lektion 4 - Typescript innom React 2 (På plats)](/docs/category/lektion-4)
-Hur kan vi använda oss av typescript inom React för att bygga säkrare och mer läsbara kod?
+### [Lektion 4 - Storyblok + Nextjs 2](/docs/category/lektion-4)
+Hur kan vi använda oss av Storyblok och Nextjs för att bygga webbplatser?
 
-### [Lektion 5 - Generics, Guards och Assertions (På plats)](/docs/category/lektion-5)
-Generics, Guards och Assertions en fördjupning i Typescript.
+### [Lektion 5 - Arbeta med gruppuppgiften + Extra uppgifter](/docs/category/lektion-5)
+Arbeta med gruppuppgiften.
 
-### Lektion 6 - Presentationer av individuella uppgiften (Distans i samanslagna grupper)
-Följ instruktionerna i [Individuella uppgiften](/docs/course/individual-task) för att lösa uppgiften och presentera inför undervisaren och andra i klassen.
+### [Lektion 6 - Mer om storys](/docs/category/lektion-6)
+Mer om storys och hur vi kan använda oss av dem.
+
+### [Lektion 7 - Storyblok + Nextjs](/docs/category/lektion-7)
+Hur kan vi använda oss av Storyblok och Nextjs för att bygga webbplatser?
+
+### [Lektion 8 - Storyblok + Nextjs 2](/docs/category/lektion-8)
+Hur kan vi använda oss av Storyblok och Nextjs för att bygga webbplatser?

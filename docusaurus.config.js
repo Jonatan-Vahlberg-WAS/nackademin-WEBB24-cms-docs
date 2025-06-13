@@ -10,8 +10,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'KYH - Typescript',
-  tagline: 'Typesafe kodning inom JavaScript',
+  title: 'Nackademin - WEBB24',
+  tagline: 'Webbutveckling med CMS - Storyblok - Next.js',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -58,9 +58,9 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'WEBB24 - Application Lifecycle Management',
+        title: 'WEBB24 - Webbutveckling med CMS - Storyblok - Next.js',
         logo: {
-          alt: 'WEBB24 - Application Lifecycle Management',
+          alt: 'WEBB24 - Webbutveckling med CMS - Storyblok - Next.js',
           src: 'img/logo_was.svg',
           srcDark: 'img/logo_was_dark.svg',
         },
