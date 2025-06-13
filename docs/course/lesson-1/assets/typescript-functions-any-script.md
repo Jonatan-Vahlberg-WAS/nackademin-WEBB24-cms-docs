@@ -85,6 +85,7 @@ Här kan funktionen returnera antingen ett nummer eller en sträng, beroende på
 **Prova själv:**
 
 - Lägg till en ny form, t.ex. "RECTANGLE", och implementera area-beräkning för den.
+_Tips: definera ett ny optional dimension för rektangeln. typ `dimension2: number`_
 
 ---
 
@@ -103,6 +104,14 @@ Men! `any` bör användas sparsamt. Det tar bort TypeScripts typkontroll och kan
 Exempel från API-anrop:
 
 ```ts
+const requestUserDataFromApi = async (id: string) => {
+  return {
+    data: {
+      id,
+    },
+  };
+};
+
 requestUserDataFromApi(id)
   .then((response) => {
     const userData: any = response.data;

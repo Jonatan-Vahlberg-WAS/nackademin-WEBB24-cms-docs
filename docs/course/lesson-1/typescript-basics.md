@@ -88,10 +88,8 @@ const isHungry: boolean = hourOfTheDay > 11 && hourOfTheDay < 13;
 
 ```tsx
 const userIsEighteen = () => {
-  const numberInput: HTMLInputElement = document.getElementById("age-input");
-  if (!numberInput) {
-    return false;
-  }
+  const numberInput: HTMLInputElement = document.getElementById("age-input") as HTMLInputElement
+  if (!numberInput) return false;
   const age = numberInput.value;
   return age === 18;
 };
@@ -155,7 +153,21 @@ function calculateArea(
 Ibland behöver vi hantera data där vi inte vet typen. Då kan vi använda `any`:
 
 ```tsx
-function saveUser(user: User) { ... }
+type User = {
+    id: string
+}
+
+function saveUser(user: User) {
+    console.log("Saving user with id ", user.id)
+}
+
+const requestUserDataFromApi = async (id: string): Promise<any> => {
+  return {
+    data: {
+      id,
+    },
+  };
+};
 
 requestUserDataFromApi(id)
   .then(response => {

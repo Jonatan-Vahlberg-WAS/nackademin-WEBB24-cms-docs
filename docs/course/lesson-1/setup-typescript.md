@@ -61,6 +61,22 @@ node index.js
 
 Du bör se utskriften "Hello World" i konsolen.
 
+### Typescript watch
+
+Om du vill att typescript ska kompilera koden automatiskt när du gör ändringar kan du använda följande kommando:
+
+```bash
+npx tsc --watch
+```
+
+och om du vill att koden också ska köras automatiskt kan du använda följande kommando:
+
+```bash
+npx tsc --watch --onSuccess "node dist/index.js"
+```
+
+
+
 ### Sätt upp TypeScript i React (Vite)
 
 ```bash
@@ -69,9 +85,9 @@ npx create-vite@latest my-app --template react-ts
 
 ### Konvertera ett react projekt till typescript
 
-1. Installera typescript, @types/react och @types/react-dom.
-2. I packages.json, ersätt `vite build` med `tsc && vite build`.
-3. Konfigurera din TS:
+1. kör `npm install` för att installera alla dependencies.
+2. Kör `npm run dev` för att starta dev-servern.
+(Optional) Konfigurera din TS:
 
 tsconfig.json
 ```json

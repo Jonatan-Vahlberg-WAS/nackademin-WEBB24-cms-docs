@@ -28,7 +28,7 @@ TypeScript har flera grundläggande datatyper:
 - **Null** – när vi medvetet vill säga att något saknas.
 - **Symbol** – används för unika identifierare (mer avancerat, men bra att känna till).
 
-_Tips: Läs mer om dessa på TypeScripts officiella dokumentation!_
+_Tips: Läs mer om dessa på TypeScripts officiella [dokumentation](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)!_
 
 **Miniquiz:**
 
@@ -103,7 +103,7 @@ Titta på exemplen ovan. Vilka behöver egentligen explicit typing? Fundera och 
 
 ```ts
 const userIsEighteen = () => {
-  const numberInput: HTMLInputElement = document.getElementById("age-input");
+  const numberInput: HTMLInputElement = document.getElementById("age-input") as HTMLInputElement
   if (!numberInput) return false;
   const age = numberInput.value;
   return age === 18;
