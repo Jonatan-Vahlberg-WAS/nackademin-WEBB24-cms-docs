@@ -43,6 +43,3 @@ Mer om storys och hur vi kan använda oss av dem.
 
 ### [Lektion 7 - Storyblok + Nextjs](/docs/category/lektion-7)
 Hur kan vi använda oss av Storyblok och Nextjs för att bygga webbplatser?
-
-### [Lektion 8 - Storyblok + Nextjs 2](/docs/category/lektion-8)
-Hur kan vi använda oss av Storyblok och Nextjs för att bygga webbplatser?
