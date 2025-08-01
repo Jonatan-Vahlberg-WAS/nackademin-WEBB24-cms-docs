@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Mor om storys
+title: Mer om storys
 en_title_slug: material
 ---
 
