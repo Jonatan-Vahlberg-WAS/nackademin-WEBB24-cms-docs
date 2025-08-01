@@ -4,8 +4,19 @@ title: Förkunskaper
 icon: <FaTasks />
 ---
 
-### Inför Lektionen
 
-- [Master TypeScript Type Aliases: Essential Tips for Beginners](https://www.youtube.com/watch?v=qwFNPOJFQn8&ab_channel=Covalence)
-- [Explained in 2 Minutes: Type vs Interface In Typescript](https://www.youtube.com/watch?v=BTBftM7D9v8)
-- [Tuples in typescript](https://www.youtube.com/watch?v=ulouRaA0tHc&pp=ygUQdHlwZXNjcmlwdCB0dXBsZQ==)
+**Vad kan du göra för att förbereda dig för lektionen?**
+
+**Videor**
+
+[What is CMS?](https://www.youtube.com/watch?v=deqX0gMeUVc)
+
+[Headless CMS Explained](https://www.youtube.com/watch?v=ajRbuyLUfZE)
+
+**Dokumentation**
+
+[Storyblok Documentation](https://www.storyblok.com/docs)
+
+[Storyblok API Documentation](https://www.storyblok.com/docs/api/content-delivery/v2/getting-started/introduction)
+
+[Storyblok Case Studies](https://www.storyblok.com/case-studies)
