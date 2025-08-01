@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 title: Mer om storys
-en_title_slug: material
+en_title_slug: more-on-storys
 ---
 
 # Vad är en story för oss utvecklare?

@@ -6,154 +6,18 @@ hide_table_of_contents: true
 
 import ContentCountdownWrapper from "@site/src/components/ContentCountdownWrapper/ContentCountdownWrapper";
 
+Individuella uppgiften är för de som siktar mot VG. Här ska ni implementera utökade krav för att få VG.
+**Mer information kommer snart.**
+
 <ContentCountdownWrapper datetime="2025-08-25T09:00:00Z">
 
-### Forum
+## Individuella krav för VG (Väl Godkänt)
 
-### Uppgift
+För att få betyget VG ska din lösning uppfylla alla G-kriterier samt följande krav:
 
-Utifrån den tidigare skapade koden som gjordes i grupparbetet eller helt egen kod så ska Forumet utökas.
-
-### Inspiration
-
-- [Reddit](https://www.reddit.com/)
-- [MacRumors Forums](https://forums.macrumors.com/)
-- [Stack Overflow](https://stackoverflow.com/questions)
-- [Mycotopia](https://mycotopia.net/)
-
-### Typescript
-
-- Allt ska vara typat utan att försöka bryta typescripts fundamentala priciper. (alltså inte type-casta allt till any)
-
-### Funktionalitet
-
-1. Lista alla trådar. (lista/kort spelar ingen roll) Visa namn och vad för sorts tråd det är ta inspiration ovan
-2. Visa tråd i detalj
-3. Skapa en tråd
-4. Skapa en kommentar på en spesifik tråd
-5. Spara trådar och kommentarer i LocalStorage eller annan databas
----
-<div className="bg-green-100/50 p-4 rounded-md mr-4">
-## Nya krav
-
-6. Kunna registrera sig och logga in
-7. Kunna låsa en tråd
-8. Endast inloggade användare ska kunna integrera med trådar och kommentarer
-9. Kommentarer på QNA trådar ska kunna markeras som svar
-
-### VG Funktionalitet
-
-För att uppnå VG så måste minst **två** av nedan krav uppfyllas
-
-1. **Implementation av rättigheter:**
-    1. Användare kan endast editera sina egna trådar
-    2. Avändare kan vara moderatorer i vilket fall dem ska kunna hantera all data
-    3. Kommentarer på QNA trådar ska kunna markeras som svar endast av skaparen
-        
-        ```tsx
-        type User = {
-        	...
-        	isModerator: boolean;
-        ```
-        
-2. **Utökade kommentarer:**
-    1. Kommentarer kan skapas på andra kommentarer
-        
-        ```tsx
-        type Comment = {
-        	...
-        	comment: number;
-        }
-        ```
-        
-    2. Kommentarer får inte innehålla opassande språk (valfritt vad som ses som opassande) och ska gömmas eller visas upp i censurerat läge om de innehåller det.
-3. **Reklam:** 
-    1. Reklam är en ny typ av tråd som ska kunnas skapas och som ska kunna synas i listan och om man klickar på den ska man tas upp ur appen eller visa det på annat sätt en vanligar trådar. (Reklam kan inte kommenteras på)
-    2. En seprat modell som heter `AdvertisementClicktrough` skapas också den ska innehålla
-    nedan. Om man är inloggad ska både `advertisement` och  `user` sparas annars sparas bara att den har klickats på.
-        
-        ```tsx
-        type ThreadCategory = "THREAD" | "QNA" | "AD";
-        
-        type Advertisement =  Thread & { //Type extension
-        	category: "AD";
-        	link: string;
-        }
-        
-        type AdvertisementClicktrough = {
-        	advertisement: number
-        	user?: number
-        }
-        ```
-        
-4. **Taggning:**
-    1. Trådar ska kunna ha sökbara taggar i list vyn ska man kunna filtrera på trådar med en spesifik tagg och i övrigt ska detta renderas.
-        
-        ```tsx
-        type ThreadTag = {
-        	id: number;
-        	name: string;
-        }
-        
-        type Thread = {
-        	...
-        	tags: ThreadTag[]
-        }
-        ```
-        
-
-### Design
-
-Design ska vara tydlig och ändmålsampassad. En slut användare ska kunna förstå hur hemsidan kan användas intuitivt. Dock är design sekundärt och funktionalitet primärt.
-
-### Typer
-
-Typförslag ni får ändra dessa men inte göra dem mer simpla.
-
-```tsx
-type ThreadCategory = "THREAD" | "QNA";
-
-type User = {
-	id: number // Nytt
-	userName: string;
-	password: string
-}
-
-type Thread = {
-  id: number;
-	title: string;
-	category: ThreadCategory;
-	creationDate: string;
-	description: string;
-	creator: User;
-}
-
-type QNAThread =  Thread & { //Type extension
-	category: "QNA";
-	isAnswered: boolean;
-	commentAnswerId?: number;
-}
-
-type Comment = {
-	id: number;
-	thread: number;
-	content: string;
-	creator: User;
-	isAnswer: boolean;
-}
-
-```
-
-### Samarbete
-
-Dela upp arbetet och samarbeta för att skapa ett modulärt och väl typat forum.
-
-### Presentation och Code Review
-
-- Demo DD:e MMM på morgonen.
-- Ge och få konstruktiv feedback på andra gruppers projekt.
-
-Lycka till!
-</div>
+- Implementera en meny med flera nivåer för navigering mellan olika sidor på webbplatsen.
+- Implementera en sökfunktion som tillåter användare att söka efter produkter på sidan (Client calls).  Ni kan öppna svaren i en modal eller alternativt rita direkt ut i sidan.
+- Implementera i Hero komponenten dynamik så jag som redaktör har möjlighet
+att ändra backgrundfärg för hela blocket.
 
 </ContentCountdownWrapper>
