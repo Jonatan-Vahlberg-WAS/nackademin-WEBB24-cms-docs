@@ -36,18 +36,18 @@ Next.js är det ramverk vi kommer att använda för att bygga webbapplikationer 
 
 För att förstå konceptet bakom Content Management Systems och headless CMS:
 
-- [What is a CMS?](https://www.contentful.com/r/knowledgebase/what-is-cms/)
-- [Headless CMS Explained](https://www.youtube.com/watch?v=5qJpEwT3iqE)
-- [Traditional vs Headless CMS](https://www.youtube.com/watch?v=5qJpEwT3iqE)
+- [What is a CMS?](https://www.contentful.com/blog/content-management-system/)
+- [Headless CMS Explained](https://www.youtube.com/watch?v=deqX0gMeUVc)
+- [Traditional vs Headless CMS](https://www.youtube.com/watch?v=av2CL4nusg4)
 
 ## Storyblok Introduktion
 
 Storyblok är det headless CMS vi kommer att arbeta med:
 
 - [Storyblok Official Documentation](https://www.storyblok.com/docs)
-- [Storyblok Tutorial](https://www.storyblok.com/tp/react-blog-tutorial)
-- [Storyblok for Developers](https://www.storyblok.com/docs/developers)
-- [Storyblok Visual Editor Demo](https://www.youtube.com/watch?v=5qJpEwT3iqE)
+- [Storyblok Tutorial (React)](https://www.storyblok.com/docs/guides/react/?utm_source=google&utm_medium=cpc&utm_campaign=p-tier_1-emea-search-brand&utm_content=EMEA_Tier_1_SEA_DEVS_CON_Brand_Tutorials_React&gad_source=1&gad_campaignid=22307559982&gbraid=0AAAAACg36ls7_wdRW2hhFbXa3NsHrT-cq&gclid=Cj0KCQjw-4XFBhCBARIsAAdNOksgB7hBEiheb9Ra2PgpjhqsmcpuZjY-pKbnyHH6eGsprQskhpCFJuUaAtmpEALw_wcB)
+- [Storyblok for Developers](https://www.storyblok.com/lp/developers)
+- [Storyblok Visual Editor Demo](https://www.youtube.com/watch?v=CtGiPds1snw)
 
 ## Utvecklingsverktyg
 
