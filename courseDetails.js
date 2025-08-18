@@ -8,7 +8,7 @@ export default {
   startWeek: 34,
   endYear: 2025,
   endWeek: 37,
-  plan: "/files/WEBB24 Kursplan CMS.pdf",
+  plan: "/files/kursplan_webb24_cms.pdf",
   consultantDetails: {
     name: "Jonatan Vahlberg",
     email: "jonatan.vahlberg@nackademin.se",
