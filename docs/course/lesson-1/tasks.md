@@ -47,7 +47,8 @@ Grupp av 3-4 personer och er uppgift är att välja ett CMS att undersöka och p
 
 ### **Presentera**
 
-Presentera era resultat för resten av klassen.  (15 min max per grupp).
+Presentera era resultat för resten av klassen.  (10 min max per grupp).
+Presentationer kommer att hållas på 18/8 kl 14:00. (planerad tid)
 
 ### **Tips:**
 
@@ -55,4 +56,4 @@ Presentera era resultat för resten av klassen.  (15 min max per grupp).
 - Använd tillgängliga resurser såsom officiella dokumentation, forum, och recensioner för att få en helhetsbild av CMS.
 
 ## Extra uppgift (ej obligatorisk)
-Känner ni er klara med uppgiften så är ni välkomna att sätta upp en enklare webb med CMS:et ni har valt och sedan ha med det i eran presentation.
+Känner ni er klara med uppgiften så är ni välkomna att sätta upp en enklare webb eller api (headless) med CMS:et ni har valt och sedan ha med det i eran presentation.
