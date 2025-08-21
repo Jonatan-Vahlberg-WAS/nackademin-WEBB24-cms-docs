@@ -32,7 +32,7 @@ Starta din server lokalt om du inte redan har gjort det.
 Starta NGrok.
 
 ```bash
-ngrok http https://localhost:3000
+ngrok http https://localhost:3000/
 ```
 
 
@@ -51,7 +51,7 @@ ngrok config add-authtoken <your-authtoken>
 Starta NGrok.
 
 ```bash
-ngrok http https://localhost:3000
+ngrok http https://localhost:3000/
 ```
 
 Välj den den forwardade adressen och kopiera den till din webbläsare eller direkt till din storyblok app.
