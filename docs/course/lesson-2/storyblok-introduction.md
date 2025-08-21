@@ -155,6 +155,7 @@ Kan användas som både content-type och nestable block.
 
 Content delivery är en av de viktigaste funktionerna i Storyblok API:et. Det möjliggör hämtning av innehåll från Storyblok till din frontend-applikation. Genom att använda Content Delivery API kan du enkelt få tillgång till och visa upp det innehåll som skapats och hanterats i Storyblok CMS.
 **Vi kommer använda detta!**
+[https://api.storyblok.com/v2/cdn/stories/home/?token=1234567890&version=draft](https://api.storyblok.com/v2/cdn/stories/home/?token=1234567890&version=draft)
 
 **Managment API:**
 
