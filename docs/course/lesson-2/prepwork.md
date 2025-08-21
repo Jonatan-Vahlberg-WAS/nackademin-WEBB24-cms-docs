@@ -22,7 +22,8 @@ title: Förberedelse inför nästa lektion
 
 Se till att ni har en grundläggande förståelse för hur ni kan använda er av Storybloks blockssystem.
 
-## Sätt upp en NGrok server för att exponera din lokala server till internet. Om man ska göra grupparbeten framöver kommer detta vara en förutsättning då SB inte tillåter fler anslutningar än 1 på gratis planen.
+## Sätt upp en NGrok server för att exponera din lokala server till internet. 
+Om man ska göra grupparbeten framöver kommer detta vara en förutsättning då SB inte tillåter fler anslutningar än 1 på gratis planen.
 
 - [NGrok guide](/docs/course/ngrok-guide)
 
