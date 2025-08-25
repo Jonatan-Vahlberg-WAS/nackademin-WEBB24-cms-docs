@@ -5,6 +5,8 @@ sidebar_position: 1
 
 import CourseSchedule from '@site/src/components/CourseOverview/CourseSchedule';
 
+## Kurskod
+[Kurskod](https://github.com/Jonatan-Vahlberg-WAS/nackademin-WEBB24-cms-lessons)
 
 ### [Inför kursen - Förberedelser och andra tips](/docs/course/preperation)
 
