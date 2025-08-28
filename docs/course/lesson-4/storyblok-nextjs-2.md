@@ -437,7 +437,3 @@ Få till kopplingen mellan storyblok och vercel för att publicera nya ändringa
 
 **Mål med uppgiften**
 Försöka kunna göra ändringar i richtext komponent
-
-# Betygsgrundande uppgift
-
-[Individuell Uppgift ](https://www.notion.so/Individuell-Uppgift-f5ff1ca3799144a9a737be17bae3841d?pvs=21)
