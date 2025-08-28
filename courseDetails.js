@@ -58,16 +58,9 @@ export default {
       mentorTime: "08:30-09:00 + Eftermiddag",
     },
     {
-      week: 35,
-      date: "28/8",
-      content: "Storyblok: Språkhantering + Arbete med uppgiften",
-      time: "7h",
-      mentorTime: "08:30-09:00, 14:00-16:00",
-    },
-    {
       week: 36,
       date: "1/9",
-      content: "Storyblok: Avancerad användning",
+      content: "Storyblok: Språkhantering + Arbete med uppgiften",
       time: "7h",
       mentorTime: "08:30-09:00, 14:00-16:00",
     },
