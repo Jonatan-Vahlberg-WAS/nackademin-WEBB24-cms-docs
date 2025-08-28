@@ -38,10 +38,14 @@ Hur kan vi använda oss av Storyblok och Nextjs för att bygga webbplatser?
 Hur kan vi använda oss av Storyblok och Nextjs för att bygga webbplatser?
 
 ### [Lektion 5 - Arbeta med gruppuppgiften + Extra uppgifter](/docs/category/lektion-5)
-Arbeta med gruppuppgiften.
-
-### [Lektion 6 - Mer om storys](/docs/category/lektion-6)
 Mer om storys och hur vi kan använda oss av dem.
 
-### [Lektion 7 - Storyblok + Nextjs](/docs/category/lektion-7)
-Hur kan vi använda oss av Storyblok och Nextjs för att bygga webbplatser?
+### Lektion 6 - Arbeta med gruppuppgiften
+Arbeta med gruppuppgiften.
+
+### Lektion 7 - Arbeta med gruppuppgiften
+Arbeta med gruppuppgiften.
+
+### Presentation
+gruppen får presentera sitt arbete. Gå igenom och visa den deployade sidan hur man kan komunicera med den via Storyblok och uppdatera innehållet utan kodändringar. Visa blok strukturen och hur man kan ändra på innehållet.
+Sist göra en kort genomgång om hur storyblok fungerar med Nextjs.
