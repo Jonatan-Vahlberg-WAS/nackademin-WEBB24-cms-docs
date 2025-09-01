@@ -1,0 +1,66 @@
+---
+sidebar_position: 9
+title: Konfigurera CMS produkter
+hide_table_of_contents: true
+---
+
+En Pattern som vi inte har diskuterat ännu är att använda en content-type för produkter och då fetcha produkterna från Storyblok istället för att handplocka dem i det visuellla gränssnittet.
+
+Om vi skapar en content-type `Product` som vi lägger i en mapp på storyblok som heter `/products`. Vi kan då skapa våra produkter som stories istället för att skapa dem som blok.
+
+I vår kod om vi behöver en lista av säg 25 produkter kan vi använda oss av storybloks [multiple story api](https://www.storyblok.com/docs/api/management/stories/retrieve-multiple-stories)
+
+Vi kan då skapa en ProductGrid komponent som använder oss av detta api och då får vi tillbaka 25 produkter (ProductGrid kan vara ett blok som vi kan lägga till på flera ställen med olika inställningar som antal produkter, etc).
+
+```jsx
+import { getStoryblokApi } from "@/lib/storyblok";
+//...
+export default async function ProductGrid({ blok }) {
+    const storyblokApi = getStoryblokApi();
+    const productData = await storyblokApi.get(`/cdn/stories`, {
+    content_type: "product",
+    per_page: blok.per_page || 25,
+    sort_by: blok.sort_by || "first_published_at:desc",
+    search: blok.search || undefined,
+    version: "draft",
+    });
+
+    const products = productData.data.stories;
+
+  return (
+    <div>
+      {products.map((product) => (
+        <ProductCard key={product.id} story={product} />
+      ))}
+    </div>
+  );
+}
+```
+
+Eller om man vill ha det client based
+
+```jsx
+import getProducts from "@/lib/actions/getProducts"; //Samma logik som ovan fast i en annan fil
+//...
+export default function ProductGrid({ blok }) {
+    const [products, setProducts] = useState([]);
+    
+    useEffect(() => {
+        const fetchProducts = async () => {
+            const products = await getProducts(blok);
+            setProducts(products);
+        };
+        fetchProducts();
+    }, [blok]);
+
+    return (
+      <div>
+        {products.map((product) => (
+          <ProductCard key={product.id} story={product} />
+        ))}
+      </div>
+    );
+}
+```
+
+Dessa produkter kan vi sedan använda i våra komponenter som renderar produkten i detalj eller i en featured produkt av 3 stycken eller i en karusell av liknande produkter (the possibilities are endless :wink:).
